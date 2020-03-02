@@ -1,8 +1,7 @@
 {
-  "name": "ASSS data",
+  "name": "SemanticModel",
   "compatibilityLevel": 1400,
   "model": {
-    "name": "ASSS database",
     "culture": "nb-NO",
     "dataSources": [
       {
@@ -889,13 +888,10 @@
               "",
               "CALCULATE(SUM('Alle Data'[Verdi]),",
               "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"12275\"),",
-              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = ",
-              "        \"Barn med barnevernstiltak i løpet av året  (antall)\"",
-              "    ),",
-              "    FILTER(ALL(Alder[Dimensjonsnavn]), [Dimensjonsnavn] = \"0-22 år\"),",
               "    FILTER(ALL(Funksjon[Dimensjonsnavn]), [Dimensjonsnavn] = ",
               "        \"252 - Barnevernstiltak når barnet er plassert av barnevernet\"",
-              "    )",
+              "    ),",
+              "    FILTER(ALL(Alder[Dimensjonsnavn]), [Dimensjonsnavn] = \"0-22 år\")",
               ")"
             ],
             "displayFolder": "Barnevern"
@@ -908,12 +904,7 @@
               "var barn_017 = ",
               "CALCULATE(sum('Alle Data'[Verdi]),",
               "    FILTER(ALL('Alle Data'[Tabell]), [Tabell] = \"11805\"),",
-              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Personer (antall)\"),",
-              "    FILTER(ALL(Alder[Dimensjonskode]), ",
-              "        IF(ISERROR(VALUE([Dimensjonskode])), ",
-              "            BLANK(), ",
-              "            VALUE([Dimensjonskode]) >= 0 && VALUE([Dimensjonskode]) <= 17)",
-              "    )",
+              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Personer (antall)\")",
               ")",
               "",
               "return (",
@@ -940,11 +931,10 @@
               "*/",
               "CALCULATE(SUM('Alle Data'[Verdi]),",
               "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"12275\"),",
-              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Barn med barnevernstiltak i løpet av året  (antall)\"),",
-              "    FILTER(ALL(Alder[Dimensjonsnavn]), [Dimensjonsnavn] = \"0-22 år\"),",
               "    FILTER(ALL(Funksjon[Dimensjonsnavn]), Funksjon[Dimensjonsnavn] = ",
               "        \"251 - Barnevernstiltak når barnet ikke er plassert av barnevernet\"",
-              "    )",
+              "    ),",
+              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Barn med barnevernstiltak i løpet av året  (antall)\")",
               ")"
             ],
             "displayFolder": "Barnevern"
@@ -964,9 +954,7 @@
               "",
               "var tiltak022 = ",
               "CALCULATE(SUM('Alle Data'[Verdi]),",
-              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"12275\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Barn med barnevernstiltak i løpet av året  (antall)\"),",
-              "    FILTER(ALL(Alder[Dimensjonsnavn]), [Dimensjonsnavn] = \"0-22 år\"),",
               "    FILTER(ALL(Funksjon[Dimensjonsnavn]), [Dimensjonsnavn] = \"Tiltak i alt\")",
               ")",
               "",
@@ -2220,7 +2208,7 @@
               ")",
               "",
               "return (",
-              "    ROUND(rbi, 3)",
+              "    ROUND(rbi, 1)",
               ")"
             ],
             "displayFolder": "Pleie og omsorg"
@@ -2515,7 +2503,7 @@
               ")",
               "",
               "return (",
-              "    ROUND(rbi, 3)",
+              "    ROUND(rbi, 1)",
               ")"
             ],
             "displayFolder": "Barnevern"
@@ -4161,14 +4149,9 @@
               "",
               "return r",
               "*/",
-              "var rbi =",
               "CALCULATE(SUM('Alle Data'[Verdi]),",
               "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"RBI01\"),",
               "    filter(all('Variabel'[Variabelnavn]), [Variabelnavn] = \"Ressursbruksindikator Kommunehelse\")",
-              ")",
-              "",
-              "return (",
-              "    ROUND(rbi, 3)",
               ")"
             ],
             "displayFolder": "Kommunehelse"
@@ -5368,14 +5351,9 @@
               "",
               "return r",
               "*/",
-              "var rbi =",
               "CALCULATE(SUM('Alle Data'[Verdi]),",
               "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"RBI01\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Ressursbruksindikator Sosiale tjenester\")",
-              ")",
-              "",
-              "return (",
-              "    ROUND(rbi, 3)",
               ")"
             ],
             "displayFolder": "Sosiale tjenester"
@@ -6125,14 +6103,9 @@
               "",
               "return r",
               "*/",
-              "var rbi =",
               "CALCULATE(SUM('Alle Data'[Verdi]),",
               "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"RBI01\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Ressursbruksindikator Barnehager\")",
-              ")",
-              "",
-              "return (",
-              "    ROUND(rbi, 3)",
               ")"
             ],
             "displayFolder": "Barnehage"
@@ -7187,14 +7160,9 @@
               "",
               "return r",
               "*/",
-              "var rbi =",
               "CALCULATE(SUM('Alle Data'[Verdi]),",
               "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"RBI01\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Ressursbruksindikator Grunnskole\")",
-              ")",
-              "",
-              "return (",
-              "    ROUND(rbi, 3)",
               ")"
             ],
             "displayFolder": "Grunnskole"
@@ -7211,14 +7179,9 @@
               "",
               "return r",
               "*/",
-              "var rbi = ",
               "CALCULATE(SUM('Alle Data'[Verdi]),",
               "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"RBI01\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Ressursbruksindikator Grunnskole F202\")",
-              ")",
-              "",
-              "return (",
-              "    ROUND(rbi, 3)",
               ")"
             ],
             "displayFolder": "Grunnskole"
@@ -11065,5 +11028,6 @@
         "value": "500"
       }
     ]
-  }
+  },
+  "id": "SemanticModel"
 }
