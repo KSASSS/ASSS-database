@@ -5,10 +5,10 @@
     "culture": "nb-NO",
     "dataSources": [
       {
-        "name": "KS-SQL2018;Reporting_ASSS",
-        "connectionString": "Provider=SQLNCLI11;Data Source=KS-SQL2018;Integrated Security=SSPI;Persist Security Info=false;Initial Catalog=Reporting_ASSS",
+        "name": "VK-SXD0E-002;Reporting_ASSS",
+        "connectionString": "Data Source=VK-SXD0E-002;Persist Security Info=false;Integrated Security=SSPI;Initial Catalog=Reporting_ASSS;Provider=SQLNCLI11",
         "impersonationMode": "impersonateAccount",
-        "account": "KSINT\\8093AHA",
+        "account": "I04\\vk-SvcASSS",
         "annotations": [
           {
             "name": "ConnectionEditUISource",
@@ -45,8 +45,9 @@
             "name": "Variabel",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Variabel].* FROM [dbo].[Variabel] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -235,8 +236,9 @@
             "name": "Art",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Art].* FROM [dbo].[Art] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -519,8 +521,9 @@
             "name": "ASSS Indikatorer",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[ASSS Indikatorer].* FROM [dbo].[ASSS Indikatorer] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -2569,24 +2572,6 @@
             "displayFolder": "Pleie og omsorg"
           },
           {
-            "name": "PLO Ressursbruksindikator (veid snitt). Pleie og omsorg*",
-            "expression": [
-              "",
-              "",
-              "var rbi =",
-              "CALCULATE(SUM('Alle Data'[Verdi]),",
-              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"RBI01\"),",
-              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Ressursbruksindikator\"),",
-              "    FILTER(ALL(Nettverk[Nettverknavn]), [Nettverknavn] = \"Pleie og omsorg\")",
-              ")",
-              "",
-              "return (",
-              "    ROUND(rbi, 3)",
-              ")"
-            ],
-            "displayFolder": "Pleie og omsorg"
-          },
-          {
             "name": "PLO Sykefravær pleie og omsorg (PAI) (prosent)*",
             "expression": [
               "",
@@ -2837,31 +2822,6 @@
               "        DIVIDE(antall1, antall2) * 100,",
               "        1",
               "    )",
-              ")"
-            ],
-            "displayFolder": "Barnevern"
-          },
-          {
-            "name": "BNV Ressursbruksindikator (veid snitt). Barnevern*",
-            "expression": [
-              "",
-              "/*",
-              "var r = CALCULATE(sum('Alle Data'[Verdi]);",
-              "filter(all('Alle Data'[Tabell]); 'Alle Data'[Tabell] = \"RBIASSS\");",
-              "filter(all('Variabel'[Variabelnavn]); 'Variabel'[Variabelnavn] = \"Ressursbruksindikator Barnevern\")",
-              ")",
-              "",
-              "return r",
-              "*/",
-              "var rbi = ",
-              "CALCULATE(SUM('Alle Data'[Verdi]),",
-              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"RBI01\"),",
-              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Ressursbruksindikator\"),",
-              "    FILTER(ALL(Nettverk[Nettverknavn]), [Nettverknavn] = \"Barnevern\")",
-              ")",
-              "",
-              "return (",
-              "    ROUND(rbi, 3)",
               ")"
             ],
             "displayFolder": "Barnevern"
@@ -3430,7 +3390,7 @@
             "displayFolder": "Kommunehelse"
           },
           {
-            "name": "KHT Årsverk helsesøstre totalt per 10 000 innbyggere 0-20 år",
+            "name": "KHT Årsverk helsesykepleiere totalt per 10 000 innbyggere 0-20 år",
             "expression": [
               "",
               "/*",
@@ -3450,7 +3410,7 @@
               "CALCULATE(SUM('Alle Data'[Verdi]),",
               "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"11994\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Avtalte årsverk (årsverk)\"),",
-              "    FILTER(ALL(Utdanning[Utdanningnavn]), [Utdanningnavn] = \"Helsesøster\")",
+              "    FILTER(ALL(Utdanning[Utdanningnavn]), [Utdanningnavn] = \"Helsesykepleiere\")",
               ")",
               "",
               "var bef = ",
@@ -3580,12 +3540,12 @@
               "CALCULATE(SUM('Alle Data'[Verdi]),",
               "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"12005\"),",
               "    /* Tilsvarer \"Antall pasienter på fastlegeliste med lege (antall)\" på ssb.no */",
-              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Antall pasienter på fastlegeliste (antall)\")",
+              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Antall pasienter på fastlegeliste med lege (antall)\")",
               ")",
               "",
               "return (",
               "    ROUND(",
-              "        DIVIDE(kapasitet, pasienter) * 100,",
+              "        DIVIDE(kapasitet, pasienter) * 100 ,",
               "        1",
               "    )",
               ")"
@@ -3593,7 +3553,7 @@
             "displayFolder": "Kommunehelse"
           },
           {
-            "name": "KHT Ledig liste-kapasitet i prosent av antall innbyggere",
+            "name": "KHT Ledig liste-kapasitet i prosent av antall innbyggere",
             "expression": [
               "",
               "/*",
@@ -3625,7 +3585,7 @@
               "var pasienter = ",
               "CALCULATE(SUM('Alle Data'[Verdi]),",
               "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"12005\"),",
-              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Antall pasienter på fastlegeliste (antall)\")",
+              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Antall pasienter på fastlegeliste med lege (antall)\")",
               "",
               ")",
               "var bef = ",
@@ -3665,7 +3625,7 @@
               "CALCULATE(SUM('Alle Data'[Verdi]),",
               "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"11993\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Barn (antall)\"),",
-              "    FILTER(ALL(Helsekontroller[Helsekontrollernavn]), [Helsekontrollernavn] = \"Hjemmebesøk nyfødte\")",
+              "    FILTER(ALL(Helsekontroller[Helsekontrollernavn]), [Helsekontrollernavn] = \"Hjemmebesøk av helsesykepleier til nyfødte\")",
               ")",
               "",
               "var barn = ",
@@ -3676,7 +3636,7 @@
               "",
               "return (",
               "    ROUND(",
-              "        DIVIDE(fodte, barn) * 100,",
+              "        DIVIDE(fodte, barn) * 100 ,",
               "        1",
               "    )",
               ")"
@@ -3726,8 +3686,8 @@
               "",
               "return (",
               "    ROUND(",
-              "        DIVIDE(aarsverk, DIVIDE(bef, 10000)),",
-              "        1",
+              "        DIVIDE(aarsverk, bef) * 10000 , ",
+              "        1 ",
               "    )",
               ")",
               ""
@@ -4426,7 +4386,7 @@
               "CALCULATE(SUM('Alle Data'[Verdi]),",
               "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"11993\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Barn (antall)\"),",
-              "    FILTER(ALL(Helsekontroller[Helsekontrollernavn]), [Helsekontrollernavn] = \"Undersøkt grunnskole 1. trinn\")",
+              "    FILTER(ALL(Helsekontroller[Helsekontrollernavn]), [Helsekontrollernavn] = \"Undersøkt grunnskole 1.trinn\")",
               ")",
               "",
               "var barn = ",
@@ -4441,31 +4401,6 @@
               "        DIVIDE(und, DIVIDE(barn, 2)) * 100,",
               "        1",
               "    )",
-              ")"
-            ],
-            "displayFolder": "Kommunehelse"
-          },
-          {
-            "name": "KHT Ressursbruksindikator (veid snitt). Kommunehelse*",
-            "expression": [
-              "",
-              "/*",
-              "var r = CALCULATE(sum('Alle Data'[Verdi]);",
-              "filter(all('Alle Data'[Tabell]); 'Alle Data'[Tabell] = \"RBIASSS\");",
-              "filter(all('Variabel'[Variabelnavn]); 'Variabel'[Variabelnavn] = \"Ressursbruksindikator Kommunehelse\")",
-              ")",
-              "",
-              "return r",
-              "*/",
-              "var rbi =",
-              "CALCULATE(SUM('Alle Data'[Verdi]),",
-              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"RBI01\"),",
-              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Ressursbruksindikator\"),",
-              "    FILTER(ALL(Nettverk[Nettverknavn]), [Nettverknavn] = \"Kommunehelse\")",
-              ")",
-              "",
-              "return (",
-              "    ROUND(rbi, 3)",
               ")"
             ],
             "displayFolder": "Kommunehelse"
@@ -5028,93 +4963,7 @@
             "name": "EIE Snitt årlig investering per innbygger 2016-2019 (2019-kroner byggekostnadsindeksen boligblokker)",
             "expression": [
               "",
-              "/*",
-              "var aar1 = ",
-              "CALCULATE(SUM('Alle Data'[Verdi]);",
-              "    FILTER(ALL(Tabeller[Tabellnummer]); [Tabellnummer] = \"12559\");",
-              "    FILTER(ALL(Variabel[Variabelnavn]); [Variabelnavn] = \"Beløp (1000 kr)\");",
-              "    FILTER(ALL(Art[Artkode]); [Artkode] = \"AGI5\");",
-              "    FILTER(ALL(Funksjon[Funksjonkode]); [Funksjonkode] = \"FGK6\");",
-              "    FILTER(ALL('År'[År]); [År] = 2015)",
-              ")",
               "",
-              "var aar2 = ",
-              "CALCULATE(SUM('Alle Data'[Verdi]);",
-              "    FILTER(ALL(Tabeller[Tabellnummer]); [Tabellnummer] = \"12559\");",
-              "    FILTER(ALL(Variabel[Variabelnavn]); [Variabelnavn] = \"Beløp (1000 kr)\");",
-              "    FILTER(ALL(Art[Artkode]); [Artkode] = \"AGI5\");",
-              "    FILTER(ALL(Funksjon[Funksjonkode]); [Funksjonkode] = \"FGK6\");",
-              "    FILTER(ALL('År'[År]); [År] =2016)",
-              ")",
-              "",
-              "var aar3 = ",
-              "CALCULATE(SUM('Alle Data'[Verdi]);",
-              "    FILTER(ALL(Tabeller[Tabellnummer]); [Tabellnummer] = \"12559\");",
-              "    FILTER(ALL(Variabel[Variabelnavn]); [Variabelnavn] = \"Beløp (1000 kr)\");",
-              "    FILTER(ALL(Art[Artkode]); [Artkode] = \"AGI5\");",
-              "    FILTER(ALL(Funksjon[Funksjonkode]); [Funksjonkode] = \"FGK6\");",
-              "    FILTER(ALL('År'[År]); [År] = 2017)",
-              ")",
-              "",
-              "var aar4 = ",
-              "CALCULATE(SUM('Alle Data'[Verdi]);",
-              "    FILTER(ALL(Tabeller[Tabellnummer]); [Tabellnummer] = \"12559\");",
-              "    FILTER(ALL(Variabel[Variabelnavn]); [Variabelnavn] = \"Beløp (1000 kr)\");",
-              "    FILTER(ALL(Art[Artkode]); [Artkode] = \"AGI5\");",
-              "    FILTER(ALL(Funksjon[Funksjonkode]); [Funksjonkode] = \"FGK6\");",
-              "    FILTER(ALL('År'[År]); [År] = 2018)",
-              ")",
-              "",
-              "var bef1 = ",
-              "CALCULATE(SUM('Alle Data'[Verdi]);",
-              "    FILTER(ALL(Tabeller[Tabellnummer]); [Tabellnummer] = \"11805\");",
-              "    FILTER(ALL(Variabel[Variabelnavn]); [Variabelnavn] = \"Personer (antall)\");",
-              "    FILTER(ALL(Alder[Aldernavn]); [Aldernavn] = \"I alt\");",
-              "    FILTER(ALL('År'[År]); [År] = 2015)",
-              ")",
-              "",
-              "var bef2 = ",
-              "CALCULATE(SUM('Alle Data'[Verdi]);",
-              "    FILTER(ALL(Tabeller[Tabellnummer]); [Tabellnummer] = \"11805\");",
-              "    FILTER(ALL(Variabel[Variabelnavn]); [Variabelnavn] = \"Personer (antall)\");",
-              "    FILTER(ALL(Alder[Aldernavn]); [Aldernavn] = \"I alt\");",
-              "    FILTER(ALL('År'[År]); [År] = 2016)",
-              ")",
-              "var bef3 = ",
-              "CALCULATE(SUM('Alle Data'[Verdi]);",
-              "    FILTER(ALL(Tabeller[Tabellnummer]); [Tabellnummer] = \"11805\");",
-              "    FILTER(ALL(Variabel[Variabelnavn]); [Variabelnavn] = \"Personer (antall)\");",
-              "    FILTER(ALL(Alder[Aldernavn]); [Aldernavn] = \"I alt\");",
-              "    FILTER(ALL('År'[År]); [År] = 2017)",
-              ")",
-              "",
-              "var bef4 = ",
-              "CALCULATE(SUM('Alle Data'[Verdi]);",
-              "    FILTER(ALL(Tabeller[Tabellnummer]); [Tabellnummer] = \"11805\");",
-              "    FILTER(ALL(Variabel[Variabelnavn]); [Variabelnavn] = \"Personer (antall)\");",
-              "    FILTER(ALL(Alder[Aldernavn]); [Aldernavn] = \"I alt\");",
-              "    FILTER(ALL('År'[År]); [År] = 2018)",
-              ")",
-              "",
-              "var aar1bef1 =",
-              "DIVIDE(aar1 * 1,08847497089639; bef1)",
-              "",
-              "var aar2bef2 =",
-              "DIVIDE(aar2 * 1,06310403638431; bef2)",
-              "",
-              "var aar3bef3 =",
-              "DIVIDE(aar3 * 1,03429203539823; bef3)",
-              "",
-              "var aar4bef4 =",
-              "DIVIDE(aar4; bef4)",
-              "",
-              "return (",
-              "    ROUND(",
-              "        DIVIDE(aar1bef1 + aar2bef2 + aar3bef3 + aar4bef4; 4) * 1000;",
-              "        1",
-              "    )",
-              ")",
-              "*/",
               "/* Hvilket år brukereren velger endrer denne */",
               "var valgte_aar = SELECTEDVALUE('År'[År])",
               "",
@@ -5245,7 +5094,7 @@
               "return (",
               "    ROUND(",
               "        /* snitt verdien av alle 4 årene */",
-              "        DIVIDE(aar1bef1 + aar2bef2 + aar3bef3 + aar4bef4, 4) * 1000,",
+              "        DIVIDE(aar1bef1 + aar2bef2 + aar3bef3 + aar4bef4, 4) * 1000 ,",
               "        0",
               "    )",
               ")"
@@ -5387,7 +5236,7 @@
               "*/",
               "var sosmott = ",
               "CALCULATE(SUM('Alle Data'[Verdi]),",
-              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"12219\"),",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"13006\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Sosialhjelpsmottakere (antall)\")",
               ")",
               "var bef = ",
@@ -5399,7 +5248,7 @@
               "",
               "return (",
               "    ROUND(",
-              "        DIVIDE(sosmott, bef) * 100,",
+              "        DIVIDE(sosmott, bef) * 100 ,",
               "        1",
               "    )",
               ")"
@@ -5417,7 +5266,7 @@
               "",
               "var sosmot = ",
               "CALCULATE(SUM('Alle Data'[Verdi]),",
-              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"12219\"),",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"13006\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Sosialhjelpsmottakere 18-24 år (antall)\")",
               ")",
               "",
@@ -5430,7 +5279,7 @@
               "",
               "return (",
               "    ROUND(",
-              "        DIVIDE(sosmot, bef) * 100,",
+              "        DIVIDE(sosmot, bef) * 100 ,",
               "        1",
               "    )",
               ")"
@@ -5447,7 +5296,7 @@
               "*/",
               "var sosmot = ",
               "CALCULATE(SUM('Alle Data'[Verdi]),",
-              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"12219\"),",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"13006\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Sosialhjelpsmottakere 25-66 år (antall)\")",
               ")",
               "",
@@ -5460,7 +5309,7 @@
               "",
               "return (",
               "    ROUND(",
-              "        DIVIDE(sosmot, bef) * 100,",
+              "        DIVIDE(sosmot, bef) * 100 ,",
               "        1",
               "    )",
               ")"
@@ -5514,13 +5363,13 @@
               "*/",
               "var stonad = ",
               "CALCULATE(SUM('Alle Data'[Verdi]), ",
-              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"12219\"), ",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"13006\"), ",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Samlet stønadssum (bidrag + lån)  (kr)\") ",
               ")",
               "",
               "var sosmott = ",
               "CALCULATE(SUM('Alle Data'[Verdi]), ",
-              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"12219\"), ",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"13006\"), ",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Sosialhjelpsmottakere (antall)\") ",
               ")",
               "",
@@ -5558,13 +5407,13 @@
               "",
               "var sosmott = ",
               "CALCULATE(SUM('Alle Data'[Verdi]), ",
-              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"12219\"), ",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"13006\"), ",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Sosialhjelpsmottakere (antall)\") ",
               ")",
               "",
               "return (",
               "    ROUND(",
-              "        DIVIDE(langtid, sosmott) * 100,",
+              "        DIVIDE(langtid, sosmott) * 100 ,",
               "        1",
               "    )",
               ")"
@@ -5584,7 +5433,7 @@
               "return lengde",
               "*/",
               "CALCULATE(SUM('Alle Data'[Verdi]),",
-              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"12219\"),",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"13006\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Gjennomsnittlig stønadstid 18-24 år (antall)\")",
               ")"
             ],
@@ -5652,20 +5501,20 @@
               "*/",
               "var langtid = ",
               "CALCULATE(SUM('Alle Data'[Verdi]), ",
-              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"12219\"),",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"13006\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = ",
               "        \"Sosialhjelpsmottakere som forsørger barn under 18 år (antall)\"",
               "    ) ",
               ") ",
               "var sosmott = ",
               "CALCULATE(SUM('Alle Data'[Verdi]), ",
-              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"12219\"), ",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"13006\"), ",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Sosialhjelpsmottakere (antall)\") ",
               ")",
               "",
               "return (",
               "    ROUND(",
-              "        DIVIDE(langtid, sosmott) * 100,",
+              "        DIVIDE(langtid, sosmott) * 100 ,",
               "        1",
               "    )",
               ")"
@@ -5694,31 +5543,6 @@
             "displayFolder": "Sosiale tjenester"
           },
           {
-            "name": "SOS Ressursbruksindikator (veid snitt). Sosiale tjenester*",
-            "expression": [
-              "",
-              "/*",
-              "var r = CALCULATE(sum('Alle Data'[Verdi]);",
-              "filter(all('Alle Data'[Tabell]); 'Alle Data'[Tabell] = \"RBIASSS\");",
-              "filter(all('Variabel'[Variabelnavn]); 'Variabel'[Variabelnavn] = \"Ressursbruksindikator Sosiale tjenester\")",
-              ")",
-              "",
-              "return r",
-              "*/",
-              "var rbi =",
-              "CALCULATE(SUM('Alle Data'[Verdi]),",
-              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"RBI01\"),",
-              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Ressursbruksindikator\"),",
-              "    FILTER(ALL(Nettverk[Nettverknavn]), [Nettverknavn] = \"Sosialtjenesten\")",
-              ")",
-              "",
-              "return (",
-              "    ROUND(rbi, 3)",
-              ")"
-            ],
-            "displayFolder": "Sosiale tjenester"
-          },
-          {
             "name": "SOS Antall sosialhjelpsmottakere som forsørger barn under 18 år",
             "expression": [
               "",
@@ -5731,7 +5555,7 @@
               "return (langtid)",
               "*/",
               "CALCULATE(SUM('Alle Data'[Verdi]), ",
-              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"12219\"),",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"13006\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = ",
               "        \"Sosialhjelpsmottakere som forsørger barn under 18 år (antall)\"",
               "    ) ",
@@ -5752,7 +5576,7 @@
               "return sosmott",
               "*/",
               "CALCULATE(SUM('Alle Data'[Verdi]),",
-              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"12219\"),",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"13006\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Sosialhjelpsmottakere (antall)\")",
               ")"
             ],
@@ -6449,31 +6273,6 @@
               "CALCULATE(SUM('Alle Data'[Verdi]),",
               "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"BHG02\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Foreldreundersøkelsen: Tilfredshet\")",
-              ")"
-            ],
-            "displayFolder": "Barnehage"
-          },
-          {
-            "name": "BHG Ressursbruksindikator (veid snitt). Barnehager*",
-            "expression": [
-              "",
-              "/*",
-              "var r = CALCULATE(sum('Alle Data'[Verdi]);",
-              "filter(all('Alle Data'[Tabell]); 'Alle Data'[Tabell] = \"RBIASSS\");",
-              "filter(all('Variabel'[Variabelnavn]); 'Variabel'[Variabelnavn] = \"Ressursbruksindikator Barnehager\")",
-              ")",
-              "",
-              "return r",
-              "*/",
-              "var rbi =",
-              "CALCULATE(SUM('Alle Data'[Verdi]),",
-              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"RBI01\"),",
-              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Ressursbruksindikator\"),",
-              "    FILTER(ALL(Nettverk[Nettverknavn]), [Nettverknavn] = \"Barnehage\")",
-              ")",
-              "",
-              "return (",
-              "    ROUND(rbi, 3)",
               ")"
             ],
             "displayFolder": "Barnehage"
@@ -7517,56 +7316,6 @@
             "displayFolder": "Grunnskole"
           },
           {
-            "name": "GRS Ressursbruksindikator (veid snitt). Grunnskole*",
-            "expression": [
-              "",
-              "/*",
-              "var r = CALCULATE(sum('Alle Data'[Verdi]);",
-              "filter(all('Alle Data'[Tabell]); 'Alle Data'[Tabell] = \"RBIASSS\");",
-              "filter(all('Variabel'[Variabelnavn]); 'Variabel'[Variabelnavn] = \"Ressursbruksindikator Grunnskole\")",
-              ")",
-              "",
-              "return r",
-              "*/",
-              "var rbi =",
-              "CALCULATE(SUM('Alle Data'[Verdi]),",
-              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"RBI01\"),",
-              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Ressursbruksindikator\"),",
-              "    FILTER(ALL(Nettverk[Nettverknavn]), [Nettverknavn] = \"Grunnskole\")",
-              ")",
-              "",
-              "return (",
-              "    ROUND(rbi, 3)",
-              ")"
-            ],
-            "displayFolder": "Grunnskole"
-          },
-          {
-            "name": "GRS Ressursbruksindikator (veid snitt). Grunnskole F202*",
-            "expression": [
-              "",
-              "/*",
-              "var r = CALCULATE(sum('Alle Data'[Verdi]);",
-              "filter(all('Alle Data'[Tabell]); 'Alle Data'[Tabell] = \"RBIASSS\");",
-              "filter(all('Variabel'[Variabelnavn]); 'Variabel'[Variabelnavn] = \"Ressursbruksindikator Grunnskole F202\")",
-              ")",
-              "",
-              "return r",
-              "*/",
-              "var rbi = ",
-              "CALCULATE(SUM('Alle Data'[Verdi]),",
-              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"RBI01\"),",
-              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Ressursbruksindikator\"),",
-              "    FILTER(ALL(Nettverk[Nettverknavn]), [Nettverknavn] = \"Grunnskole F202\")",
-              ")",
-              "",
-              "return (",
-              "    ROUND(rbi, 3)",
-              ")"
-            ],
-            "displayFolder": "Grunnskole"
-          },
-          {
             "name": "GRS Antall assistentårsverk per hundre lærerårsverk*",
             "expression": [
               "",
@@ -7963,6 +7712,142 @@
               ")"
             ],
             "displayFolder": "Sosiale tjenester"
+          },
+          {
+            "name": "KHT Årsverk ergoterapeuter per 10 000 innbyggere uADM",
+            "expression": [
+              "",
+              "",
+              "/* totalt årsverk */",
+              "var aarsverk = ",
+              "CALCULATE(SUM('Alle Data'[Verdi]),",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"KHT01\"),",
+              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = ",
+              "        \"Årsverk ergoteraputer i alt\"",
+              "    )",
+              ")",
+              "",
+              "/* Funksjon 120 */",
+              "var admin = ",
+              "CALCULATE(SUM('Alle Data'[Verdi]),",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"KHT01\"),",
+              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = ",
+              "        \"Årsverk ergoteraputer. Administrasjon (f120)\"",
+              "    )",
+              ")",
+              "",
+              "/* totale befolkning */",
+              "var bef = ",
+              "CALCULATE(SUM('Alle Data'[Verdi]),",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"11805\"), ",
+              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Personer (antall)\"),",
+              "    FILTER(ALL(Alder[Aldernavn]), [Aldernavn] = \"I alt\")",
+              ")",
+              "",
+              "return (",
+              "    ROUND(",
+              "        DIVIDE(aarsverk - admin, bef) * 10000 , ",
+              "        1 ",
+              "    )",
+              ")",
+              ""
+            ],
+            "displayFolder": "Kommunehelse"
+          },
+          {
+            "name": "KHT Årsverk ergoterapeuter nov2019",
+            "expression": [
+              "",
+              "",
+              "/* totalt årsverk */",
+              "var f233 = ",
+              "CALCULATE(SUM('Alle Data'[Verdi]),",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"KHT01\"),",
+              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = ",
+              "        \"Årsverk ergoteraputer. Annet forebyggende helsearbeid (f233) - Annet forebyggende arbeid\"",
+              "    )",
+              ")",
+              "",
+              "/* Funksjon 120 */",
+              "var f241 = ",
+              "CALCULATE(SUM('Alle Data'[Verdi]),",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"KHT01\"),",
+              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = ",
+              "        \"Årsverk ergoteraputer. Diagnose/ behandling, re-/habilitering (f241)\"",
+              "    )",
+              ")",
+              "",
+              "var f232 = ",
+              "CALCULATE(SUM('Alle Data'[Verdi]),",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"KHT01\"),",
+              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = ",
+              "        \"Årsverk ergoteraputer. Forebygging, helsestasjons- og skolehelsetjeneste (f232)\"",
+              "    )",
+              ")",
+              "",
+              "/* totale befolkning */",
+              "var bef = ",
+              "CALCULATE(SUM('Alle Data'[Verdi]),",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"11805\"), ",
+              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Personer (antall)\"),",
+              "    FILTER(ALL(Alder[Aldernavn]), [Aldernavn] = \"I alt\")",
+              ")",
+              "",
+              "return (",
+              "    ROUND(",
+              "        DIVIDE(f233 + f241 + f232, DIVIDE(bef, 10000)) , ",
+              "        1 ",
+              "    )",
+              ")"
+            ],
+            "displayFolder": "Kommunehelse"
+          },
+          {
+            "name": "PLO Utgifter per oppholdsdøgn i institusjon",
+            "expression": [
+              "",
+              "CALCULATE(SUM('Alle Data'[Verdi]),",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"12209\"),",
+              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = ",
+              "        \"Utgifter per oppholdsdøgn i institusjon (kr)\"",
+              "    )",
+              ")"
+            ],
+            "displayFolder": "Pleie og omsorg"
+          },
+          {
+            "name": "PLO Andel brukere av hjemmetjenester av befolkningen 0-66 år",
+            "expression": [
+              "",
+              "",
+              "var brukere = ",
+              "CALCULATE(SUM('Alle Data'[Verdi]),",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"12292\"),",
+              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = ",
+              "        \"Hjemmetjenester - brukere 0-66 år (antall)\"",
+              "    )",
+              ")",
+              "",
+              "var innb =",
+              "CALCULATE(SUM('Alle Data'[Verdi]),",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"11805\"),",
+              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = ",
+              "        \"Personer (antall)\"",
+              "    ),",
+              "    FILTER(ALL(Alder[Aldernavn]), [Aldernavn] = ",
+              "        \"0 - 66 år\"",
+              "    )",
+              ")",
+              "",
+              "return (",
+              "    ROUND(",
+              "        DIVIDE(brukere, innb),",
+              "        3",
+              "    ) * 100",
+              ")",
+              ""
+            ],
+            "displayFolder": "Pleie og omsorg"
           }
         ],
         "annotations": [
@@ -8269,8 +8154,9 @@
             "name": "Energitype",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Energitype].* FROM [dbo].[Energitype] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -8509,8 +8395,9 @@
             "name": "Funksjon",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Funksjon].* FROM [dbo].[Funksjon] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -8783,8 +8670,9 @@
             "name": "Region",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Region].* FROM [dbo].[Region] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -9154,8 +9042,9 @@
             "name": "Tabeller",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Tabeller].* FROM [dbo].[Tabeller] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -9335,8 +9224,9 @@
             "name": "År",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[År].* FROM [dbo].[År] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             }
           }
         ],
@@ -9512,6 +9402,11 @@
             "name": "Nettverkkode",
             "dataType": "string",
             "sourceColumn": "Nettverkkode"
+          },
+          {
+            "name": "Lærerkompetansekode",
+            "dataType": "string",
+            "sourceColumn": "Lærerkompetansekode"
           }
         ],
         "partitions": [
@@ -9519,8 +9414,9 @@
             "name": "Alle Data",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Alle Data].* FROM [dbo].[Alle Data] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -9775,6 +9671,14 @@
                   "        <int>132</int>",
                   "      </value>",
                   "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Lærerkompetansekode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>140</int>",
+                  "      </value>",
+                  "    </item>",
                   "  </ColumnWidths>",
                   "  <ColumnDisplayIndex>",
                   "    <item>",
@@ -10017,6 +9921,14 @@
                   "        <int>29</int>",
                   "      </value>",
                   "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Lærerkompetansekode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>30</int>",
+                  "      </value>",
+                  "    </item>",
                   "  </ColumnDisplayIndex>",
                   "  <ColumnFrozen />",
                   "  <ColumnChecked>",
@@ -10223,6 +10135,14 @@
                   "    <item>",
                   "      <key>",
                   "        <string>Nettverkkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Lærerkompetansekode</string>",
                   "      </key>",
                   "      <value>",
                   "        <boolean>true</boolean>",
@@ -10510,6 +10430,14 @@
               "        <int>132</int>",
               "      </value>",
               "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Lærerkompetansekode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>140</int>",
+              "      </value>",
+              "    </item>",
               "  </ColumnWidths>",
               "  <ColumnDisplayIndex>",
               "    <item>",
@@ -10752,6 +10680,14 @@
               "        <int>29</int>",
               "      </value>",
               "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Lærerkompetansekode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>30</int>",
+              "      </value>",
+              "    </item>",
               "  </ColumnDisplayIndex>",
               "  <ColumnFrozen />",
               "  <ColumnChecked>",
@@ -10963,6 +10899,14 @@
               "        <boolean>true</boolean>",
               "      </value>",
               "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Lærerkompetansekode</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
               "  </ColumnChecked>",
               "  <ColumnFilter />",
               "  <SelectionFilter />",
@@ -10997,8 +10941,9 @@
             "name": "Alder",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Alder].* FROM [dbo].[Alder] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -11237,8 +11182,9 @@
             "name": "Handsamingstid",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Handsamingstid].* FROM [dbo].[Handsamingstid] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -11477,8 +11423,9 @@
             "name": "Kilde",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Kilde].* FROM [dbo].[Kilde] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -11717,8 +11664,9 @@
             "name": "Konklusjon",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Konklusjon].* FROM [dbo].[Konklusjon] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -11957,8 +11905,9 @@
             "name": "Omsorgs-hjelpetiltak",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Omsorgs-/hjelpetiltak].* FROM [dbo].[Omsorgs-/hjelpetiltak] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -12227,8 +12176,9 @@
             "name": "Sammenslåtte Regioner",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Sammenslåtte Regioner].* FROM [dbo].[Sammenslåtte Regioner] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             }
           }
         ],
@@ -12271,8 +12221,9 @@
             "name": "Tiltakskategori",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Tiltakskategori].* FROM [dbo].[Tiltakskategori] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -12511,8 +12462,9 @@
             "name": "Tjenestegrupper",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Tjenestegrupper].* FROM [dbo].[Tjenestegrupper] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -12751,8 +12703,9 @@
             "name": "Utdanning",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Utdanning].* FROM [dbo].[Utdanning] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -12991,8 +12944,9 @@
             "name": "Kommunal sektor",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Kommunal sektor].* FROM [dbo].[Kommunal sektor] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -13231,8 +13185,9 @@
             "name": "Post",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Post].* FROM [dbo].[Post] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -13471,8 +13426,9 @@
             "name": "Regnskapsbegrep",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Regnskapsbegrep].* FROM [dbo].[Regnskapsbegrep] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -13711,8 +13667,9 @@
             "name": "Avtaleform",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Avtaleform].* FROM [dbo].[Avtaleform] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -13951,8 +13908,9 @@
             "name": "Helsekontroller",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Helsekontroller].* FROM [dbo].[Helsekontroller] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -14191,8 +14149,9 @@
             "name": "Eieform",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Eieform].* FROM [dbo].[Eieform] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -14431,8 +14390,9 @@
             "name": "Årstrinn",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Årstrinn].* FROM [dbo].[Årstrinn] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -14671,8 +14631,9 @@
             "name": "Eierforhold",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Eierforhold].* FROM [dbo].[Eierforhold] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -14911,8 +14872,9 @@
             "name": "Oppholdstid",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Oppholdstid].* FROM [dbo].[Oppholdstid] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -15151,8 +15113,9 @@
             "name": "Kjønn",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Kjønn].* FROM [dbo].[Kjønn] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -15391,8 +15354,9 @@
             "name": "Stillingstype",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Stillingstype].* FROM [dbo].[Stillingstype] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -15631,8 +15595,9 @@
             "name": "Kompetanse",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Kompetanse].* FROM [dbo].[Kompetanse] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -15871,8 +15836,9 @@
             "name": "Tjenesteområde",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Tjenesteområde].* FROM [dbo].[Tjenesteområde] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             },
             "annotations": [
               {
@@ -16114,8 +16080,9 @@
             "name": "Nettverk",
             "dataView": "full",
             "source": {
+              "type": "query",
               "query": " SELECT [dbo].[Nettverk].* FROM [dbo].[Nettverk] ",
-              "dataSource": "KS-SQL2018;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
             }
           }
         ],
@@ -16127,6 +16094,54 @@
           {
             "name": "_TM_ExtProp_DbTableName",
             "value": "Nettverk"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Lærerkompetanse",
+        "columns": [
+          {
+            "name": "Lærerkompetansekode",
+            "dataType": "string",
+            "sourceColumn": "Lærerkompetansekode",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Lærerkompetansenavn",
+            "dataType": "string",
+            "sourceColumn": "Lærerkompetansenavn",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "LærerkompetansekodeNavn",
+            "dataType": "string",
+            "sourceColumn": "LærerkompetansekodeNavn",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Lærerkompetanse",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[Lærerkompetanse].* FROM [dbo].[Lærerkompetanse] ",
+              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Lærerkompetanse].* FROM [dbo].[Lærerkompetanse] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Lærerkompetanse"
           },
           {
             "name": "_TM_ExtProp_DbSchemaName",
@@ -16338,6 +16353,45 @@
         "fromColumn": "Nettverkkode",
         "toTable": "Nettverk",
         "toColumn": "Nettverkkode"
+      },
+      {
+        "name": "fffe20ba-31bd-416d-bd61-c268f30b7aa0",
+        "fromTable": "Alle Data",
+        "fromColumn": "Lærerkompetansekode",
+        "toTable": "Lærerkompetanse",
+        "toColumn": "Lærerkompetansekode"
+      }
+    ],
+    "roles": [
+      {
+        "name": "API",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "NT AUTHORITY\\IUSR",
+            "memberId": "S-1-5-17"
+          }
+        ]
+      },
+      {
+        "name": "Brukere",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "I04\\VK.DB.VK-SXD0E-002_ASSS.DBO",
+            "memberId": "S-1-5-21-2036031588-730629661-1306914269-1033621"
+          }
+        ]
+      },
+      {
+        "name": "PowerBI",
+        "modelPermission": "administrator",
+        "members": [
+          {
+            "memberName": "I04\\vk-PowerBIService",
+            "memberId": "S-1-5-21-2036031588-730629661-1306914269-1042837"
+          }
+        ]
       }
     ],
     "annotations": [
