@@ -7853,10 +7853,16 @@
             "name": "EIE Tilstandsvurdering grunnskole (prosent)",
             "expression": [
               "",
+              "",
+              "var tilstand =",
               "CALCULATE(SUM('Alle Data'[Verdi]),",
               "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"EIE01\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Tilstandsvurdering grunnskole (prosent)\")",
-              ") "
+              ")",
+              "",
+              "return (",
+              "    ROUND(tilstand, 1)",
+              ")"
             ],
             "displayFolder": "Eiendomsforvaltning"
           },
@@ -7864,10 +7870,16 @@
             "name": "EIE Tilstandsvurdering pleie og omsorg (prosent)",
             "expression": [
               "",
+              "",
+              "var tilstand =",
               "CALCULATE(SUM('Alle Data'[Verdi]),",
               "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"EIE01\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Tilstandsvurdering pleie og omsorg (prosent)\")",
-              ") "
+              ")",
+              "",
+              "return (",
+              "    ROUND(tilstand, 1)",
+              ")"
             ],
             "displayFolder": "Eiendomsforvaltning"
           }

@@ -6,8 +6,8 @@
     "culture": "nb-NO",
     "dataSources": [
       {
-        "name": "TEST_Reporting_ASSS",
-        "connectionString": "Data Source=VK-SXD0E-003;Persist Security Info=false;Integrated Security=SSPI;Initial Catalog=TEST_Reporting_ASSS;Provider=SQLNCLI11",
+        "name": "Reporting_ASSS",
+        "connectionString": "Data Source=VK-SXD0E-002;Persist Security Info=false;Integrated Security=SSPI;Initial Catalog=Reporting_ASSS;Provider=SQLNCLI11",
         "impersonationMode": "impersonateAccount",
         "account": "I04\\vk300",
         "annotations": [
@@ -48,7 +48,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Variabel].* FROM [dbo].[Variabel] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -239,7 +239,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Art].* FROM [dbo].[Art] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -524,7 +524,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[ASSS Indikatorer].* FROM [dbo].[ASSS Indikatorer] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -7849,6 +7849,40 @@
               ""
             ],
             "displayFolder": "Pleie og omsorg"
+          },
+          {
+            "name": "EIE Tilstandsvurdering grunnskole (prosent)",
+            "expression": [
+              "",
+              "",
+              "var tilstand =",
+              "CALCULATE(SUM('Alle Data'[Verdi]),",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"EIE01\"),",
+              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Tilstandsvurdering grunnskole (prosent)\")",
+              ")",
+              "",
+              "return (",
+              "    ROUND(tilstand, 1)",
+              ")"
+            ],
+            "displayFolder": "Eiendomsforvaltning"
+          },
+          {
+            "name": "EIE Tilstandsvurdering pleie og omsorg (prosent)",
+            "expression": [
+              "",
+              "",
+              "var tilstand =",
+              "CALCULATE(SUM('Alle Data'[Verdi]),",
+              "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"EIE01\"),",
+              "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Tilstandsvurdering pleie og omsorg (prosent)\")",
+              ")",
+              "",
+              "return (",
+              "    ROUND(tilstand, 1)",
+              ")"
+            ],
+            "displayFolder": "Eiendomsforvaltning"
           }
         ],
         "annotations": [
@@ -8157,7 +8191,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Energitype].* FROM [dbo].[Energitype] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -8398,7 +8432,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Funksjon].* FROM [dbo].[Funksjon] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -8673,7 +8707,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Region].* FROM [dbo].[Region] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -9045,7 +9079,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Tabeller].* FROM [dbo].[Tabeller] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -9227,7 +9261,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[År].* FROM [dbo].[År] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             }
           }
         ],
@@ -9417,7 +9451,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Alle Data].* FROM [dbo].[Alle Data] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -10944,7 +10978,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Alder].* FROM [dbo].[Alder] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -11185,7 +11219,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Handsamingstid].* FROM [dbo].[Handsamingstid] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -11426,7 +11460,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Kilde].* FROM [dbo].[Kilde] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -11667,7 +11701,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Konklusjon].* FROM [dbo].[Konklusjon] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -11908,7 +11942,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Omsorgs-/hjelpetiltak].* FROM [dbo].[Omsorgs-/hjelpetiltak] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -12179,7 +12213,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Sammenslåtte Regioner].* FROM [dbo].[Sammenslåtte Regioner] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             }
           }
         ],
@@ -12224,7 +12258,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Tiltakskategori].* FROM [dbo].[Tiltakskategori] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -12465,7 +12499,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Tjenestegrupper].* FROM [dbo].[Tjenestegrupper] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -12706,7 +12740,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Utdanning].* FROM [dbo].[Utdanning] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -12947,7 +12981,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Kommunal sektor].* FROM [dbo].[Kommunal sektor] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -13188,7 +13222,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Post].* FROM [dbo].[Post] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -13429,7 +13463,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Regnskapsbegrep].* FROM [dbo].[Regnskapsbegrep] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -13670,7 +13704,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Avtaleform].* FROM [dbo].[Avtaleform] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -13911,7 +13945,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Helsekontroller].* FROM [dbo].[Helsekontroller] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -14152,7 +14186,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Eieform].* FROM [dbo].[Eieform] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -14393,7 +14427,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Årstrinn].* FROM [dbo].[Årstrinn] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -14634,7 +14668,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Eierforhold].* FROM [dbo].[Eierforhold] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -14875,7 +14909,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Oppholdstid].* FROM [dbo].[Oppholdstid] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -15116,7 +15150,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Kjønn].* FROM [dbo].[Kjønn] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -15357,7 +15391,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Stillingstype].* FROM [dbo].[Stillingstype] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -15598,7 +15632,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Kompetanse].* FROM [dbo].[Kompetanse] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -15839,7 +15873,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Tjenesteområde].* FROM [dbo].[Tjenesteområde] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             },
             "annotations": [
               {
@@ -16083,7 +16117,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Nettverk].* FROM [dbo].[Nettverk] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             }
           }
         ],
@@ -16131,7 +16165,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Lærerkompetanse].* FROM [dbo].[Lærerkompetanse] ",
-              "dataSource": "TEST_Reporting_ASSS"
+              "dataSource": "Reporting_ASSS"
             }
           }
         ],
