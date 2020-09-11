@@ -6,10 +6,10 @@
     "culture": "nb-NO",
     "dataSources": [
       {
-        "name": "VK-SXD0E-002;Reporting_ASSS",
-        "connectionString": "Data Source=VK-SXD0E-002;Persist Security Info=false;Integrated Security=SSPI;Initial Catalog=Reporting_ASSS;Provider=SQLNCLI11",
+        "name": "TEST_Reporting_ASSS",
+        "connectionString": "Data Source=VK-SXD0E-003;Persist Security Info=false;Integrated Security=SSPI;Initial Catalog=TEST_Reporting_ASSS;Provider=SQLNCLI11",
         "impersonationMode": "impersonateAccount",
-        "account": "I04\\vk-SvcASSS",
+        "account": "I04\\vk300",
         "annotations": [
           {
             "name": "ConnectionEditUISource",
@@ -48,7 +48,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Variabel].* FROM [dbo].[Variabel] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -239,7 +239,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Art].* FROM [dbo].[Art] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -524,7 +524,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[ASSS Indikatorer].* FROM [dbo].[ASSS Indikatorer] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -8157,7 +8157,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Energitype].* FROM [dbo].[Energitype] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -8398,7 +8398,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Funksjon].* FROM [dbo].[Funksjon] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -8673,7 +8673,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Region].* FROM [dbo].[Region] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -9045,7 +9045,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Tabeller].* FROM [dbo].[Tabeller] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -9227,7 +9227,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[År].* FROM [dbo].[År] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             }
           }
         ],
@@ -9417,7 +9417,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Alle Data].* FROM [dbo].[Alle Data] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -10944,7 +10944,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Alder].* FROM [dbo].[Alder] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -11185,7 +11185,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Handsamingstid].* FROM [dbo].[Handsamingstid] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -11426,7 +11426,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Kilde].* FROM [dbo].[Kilde] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -11667,7 +11667,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Konklusjon].* FROM [dbo].[Konklusjon] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -11908,7 +11908,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Omsorgs-/hjelpetiltak].* FROM [dbo].[Omsorgs-/hjelpetiltak] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -12179,7 +12179,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Sammenslåtte Regioner].* FROM [dbo].[Sammenslåtte Regioner] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             }
           }
         ],
@@ -12224,7 +12224,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Tiltakskategori].* FROM [dbo].[Tiltakskategori] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -12465,7 +12465,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Tjenestegrupper].* FROM [dbo].[Tjenestegrupper] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -12706,7 +12706,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Utdanning].* FROM [dbo].[Utdanning] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -12947,7 +12947,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Kommunal sektor].* FROM [dbo].[Kommunal sektor] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -13188,7 +13188,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Post].* FROM [dbo].[Post] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -13429,7 +13429,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Regnskapsbegrep].* FROM [dbo].[Regnskapsbegrep] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -13670,7 +13670,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Avtaleform].* FROM [dbo].[Avtaleform] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -13911,7 +13911,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Helsekontroller].* FROM [dbo].[Helsekontroller] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -14152,7 +14152,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Eieform].* FROM [dbo].[Eieform] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -14393,7 +14393,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Årstrinn].* FROM [dbo].[Årstrinn] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -14634,7 +14634,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Eierforhold].* FROM [dbo].[Eierforhold] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -14875,7 +14875,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Oppholdstid].* FROM [dbo].[Oppholdstid] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -15116,7 +15116,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Kjønn].* FROM [dbo].[Kjønn] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -15357,7 +15357,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Stillingstype].* FROM [dbo].[Stillingstype] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -15598,7 +15598,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Kompetanse].* FROM [dbo].[Kompetanse] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -15839,7 +15839,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Tjenesteområde].* FROM [dbo].[Tjenesteområde] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -16083,7 +16083,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Nettverk].* FROM [dbo].[Nettverk] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             }
           }
         ],
@@ -16131,7 +16131,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Lærerkompetanse].* FROM [dbo].[Lærerkompetanse] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "TEST_Reporting_ASSS"
             }
           }
         ],
