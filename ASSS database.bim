@@ -1050,10 +1050,17 @@
             "expression": [
               "",
               "",
+              "var fravaer =",
               "CALCULATE(SUM('Alle Data'[Verdi]),",
               "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"PAI02\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Sykefravær Samferdsel (PAI)\")",
-              ")"
+              ")",
+              "",
+              "return (",
+              "    ROUND(fravaer, 1)",
+              ")",
+              "",
+              ""
             ],
             "displayFolder": "Samferdsel"
           },
@@ -4894,11 +4901,15 @@
               "",
               "return a",
               "*/",
+              "var sykefrav =",
               "CALCULATE(SUM('Alle Data'[Verdi]),",
               "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"PAI02\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Sykefravær Eiendomsforvaltning i Alt (PAI)\")",
               ")",
-              ""
+              "",
+              "return (",
+              "    ROUND(sykefrav, 2)",
+              ")"
             ],
             "displayFolder": "Eiendomsforvaltning"
           },
