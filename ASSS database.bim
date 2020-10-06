@@ -7852,9 +7852,9 @@
               "",
               "return (",
               "    ROUND(",
-              "        DIVIDE(brukere, innb),",
+              "        DIVIDE(brukere, innb) * 100,",
               "        3",
-              "    ) * 100",
+              "    )",
               ")",
               ""
             ],
@@ -9452,6 +9452,16 @@
             "name": "Lærerkompetansekode",
             "dataType": "string",
             "sourceColumn": "Lærerkompetansekode"
+          },
+          {
+            "name": "Rammevilkårkode",
+            "dataType": "string",
+            "sourceColumn": "Rammevilkårkode"
+          },
+          {
+            "name": "Søknadstypekode",
+            "dataType": "string",
+            "sourceColumn": "Søknadstypekode"
           }
         ],
         "partitions": [
@@ -9724,6 +9734,22 @@
                   "        <int>140</int>",
                   "      </value>",
                   "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Rammevilkårkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>143</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Søknadstypekode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>145</int>",
+                  "      </value>",
+                  "    </item>",
                   "  </ColumnWidths>",
                   "  <ColumnDisplayIndex>",
                   "    <item>",
@@ -9974,6 +10000,22 @@
                   "        <int>30</int>",
                   "      </value>",
                   "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Rammevilkårkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>31</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Søknadstypekode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>32</int>",
+                  "      </value>",
+                  "    </item>",
                   "  </ColumnDisplayIndex>",
                   "  <ColumnFrozen />",
                   "  <ColumnChecked>",
@@ -10188,6 +10230,22 @@
                   "    <item>",
                   "      <key>",
                   "        <string>Lærerkompetansekode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Rammevilkårkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Søknadstypekode</string>",
                   "      </key>",
                   "      <value>",
                   "        <boolean>true</boolean>",
@@ -10483,6 +10541,22 @@
               "        <int>140</int>",
               "      </value>",
               "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Rammevilkårkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>143</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Søknadstypekode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>145</int>",
+              "      </value>",
+              "    </item>",
               "  </ColumnWidths>",
               "  <ColumnDisplayIndex>",
               "    <item>",
@@ -10733,6 +10807,22 @@
               "        <int>30</int>",
               "      </value>",
               "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Rammevilkårkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>31</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Søknadstypekode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>32</int>",
+              "      </value>",
+              "    </item>",
               "  </ColumnDisplayIndex>",
               "  <ColumnFrozen />",
               "  <ColumnChecked>",
@@ -10947,6 +11037,22 @@
               "    <item>",
               "      <key>",
               "        <string>Lærerkompetansekode</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Rammevilkårkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Søknadstypekode</string>",
               "      </key>",
               "      <value>",
               "        <boolean>true</boolean>",
@@ -16193,6 +16299,102 @@
             "value": "dbo"
           }
         ]
+      },
+      {
+        "name": "Rammevilkår",
+        "columns": [
+          {
+            "name": "Rammevilkårkode",
+            "dataType": "string",
+            "sourceColumn": "Rammevilkårkode",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Rammevilkårnavn",
+            "dataType": "string",
+            "sourceColumn": "Rammevilkårnavn",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "RammevilkårkodeNavn",
+            "dataType": "string",
+            "sourceColumn": "RammevilkårkodeNavn",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Rammevilkår",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[Rammevilkår].* FROM [dbo].[Rammevilkår] ",
+              "dataSource": "Reporting_ASSS"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Rammevilkår].* FROM [dbo].[Rammevilkår] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Rammevilkår"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Søknadstype",
+        "columns": [
+          {
+            "name": "Søknadstypekode",
+            "dataType": "string",
+            "sourceColumn": "Søknadstypekode",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Søknadstypenavn",
+            "dataType": "string",
+            "sourceColumn": "Søknadstypenavn",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "SøknadstypekodeNavn",
+            "dataType": "string",
+            "sourceColumn": "SøknadstypekodeNavn",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Søknadstype",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[Søknadstype].* FROM [dbo].[Søknadstype] ",
+              "dataSource": "Reporting_ASSS"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Søknadstype].* FROM [dbo].[Søknadstype] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Søknadstype"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
       }
     ],
     "relationships": [
@@ -16405,6 +16607,20 @@
         "fromColumn": "Lærerkompetansekode",
         "toTable": "Lærerkompetanse",
         "toColumn": "Lærerkompetansekode"
+      },
+      {
+        "name": "a4d4ad0d-e856-4ef8-817d-46543941ae38",
+        "fromTable": "Alle Data",
+        "fromColumn": "Rammevilkårkode",
+        "toTable": "Rammevilkår",
+        "toColumn": "Rammevilkårkode"
+      },
+      {
+        "name": "aff9d896-7a55-437c-b611-2bf46dd7fc60",
+        "fromTable": "Alle Data",
+        "fromColumn": "Søknadstypekode",
+        "toTable": "Søknadstype",
+        "toColumn": "Søknadstypekode"
       }
     ],
     "roles": [
