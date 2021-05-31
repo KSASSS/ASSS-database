@@ -5,8 +5,8 @@
     "culture": "nb-NO",
     "dataSources": [
       {
-        "name": "VK-SXD0E-002;Reporting_ASSS",
-        "connectionString": "Data Source=VK-SXD0E-002;Persist Security Info=false;Integrated Security=SSPI;Initial Catalog=Reporting_ASSS;Provider=SQLNCLI11",
+        "name": "VK-SXD0E-003;TEST_Reporting_ASSS",
+        "connectionString": "Data Source=VK-SXD0E-003;Persist Security Info=false;Integrated Security=SSPI;Initial Catalog=TEST_Reporting_ASSS;Provider=SQLNCLI11",
         "impersonationMode": "impersonateAccount",
         "account": "I04\\vk-SvcASSS",
         "annotations": [
@@ -22,22 +22,20 @@
         "name": "Variabel",
         "columns": [
           {
-            "name": "Variabelgruppe",
-            "dataType": "string",
-            "sourceColumn": "Variabelgruppe",
-            "sourceProviderType": "Char"
-          },
-          {
-            "name": "Variabel",
-            "dataType": "string",
-            "sourceColumn": "Variabel",
-            "sourceProviderType": "Char"
-          },
-          {
             "name": "Variabelnavn",
             "dataType": "string",
             "sourceColumn": "Variabelnavn",
             "sourceProviderType": "Char"
+          },
+          {
+            "name": "Gruppe",
+            "dataType": "string",
+            "sourceColumn": "Gruppe"
+          },
+          {
+            "name": "Variabelkode",
+            "dataType": "string",
+            "sourceColumn": "Variabelkode"
           }
         ],
         "partitions": [
@@ -47,7 +45,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Variabel].* FROM [dbo].[Variabel] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -64,18 +62,18 @@
                   "  <ColumnWidths>",
                   "    <item>",
                   "      <key>",
-                  "        <string>Variabelgruppe</string>",
+                  "        <string>Variabelkode</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>146</int>",
+                  "        <int>91</int>",
                   "      </value>",
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>Variabel</string>",
+                  "        <string>Gruppe</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>96</int>",
+                  "        <int>65</int>",
                   "      </value>",
                   "    </item>",
                   "    <item>",
@@ -90,15 +88,15 @@
                   "  <ColumnDisplayIndex>",
                   "    <item>",
                   "      <key>",
-                  "        <string>Variabelgruppe</string>",
+                  "        <string>Variabelkode</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>0</int>",
+                  "        <int>2</int>",
                   "      </value>",
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>Variabel</string>",
+                  "        <string>Gruppe</string>",
                   "      </key>",
                   "      <value>",
                   "        <int>1</int>",
@@ -109,12 +107,29 @@
                   "        <string>Variabelnavn</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>2</int>",
+                  "        <int>0</int>",
                   "      </value>",
                   "    </item>",
                   "  </ColumnDisplayIndex>",
                   "  <ColumnFrozen />",
-                  "  <ColumnChecked />",
+                  "  <ColumnChecked>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Gruppe</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Variabelkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnChecked>",
                   "  <ColumnFilter />",
                   "  <SelectionFilter />",
                   "  <FilterParameters />",
@@ -152,18 +167,18 @@
               "  <ColumnWidths>",
               "    <item>",
               "      <key>",
-              "        <string>Variabelgruppe</string>",
+              "        <string>Variabelkode</string>",
               "      </key>",
               "      <value>",
-              "        <int>146</int>",
+              "        <int>91</int>",
               "      </value>",
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>Variabel</string>",
+              "        <string>Gruppe</string>",
               "      </key>",
               "      <value>",
-              "        <int>96</int>",
+              "        <int>65</int>",
               "      </value>",
               "    </item>",
               "    <item>",
@@ -178,15 +193,15 @@
               "  <ColumnDisplayIndex>",
               "    <item>",
               "      <key>",
-              "        <string>Variabelgruppe</string>",
+              "        <string>Variabelkode</string>",
               "      </key>",
               "      <value>",
-              "        <int>0</int>",
+              "        <int>2</int>",
               "      </value>",
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>Variabel</string>",
+              "        <string>Gruppe</string>",
               "      </key>",
               "      <value>",
               "        <int>1</int>",
@@ -197,12 +212,29 @@
               "        <string>Variabelnavn</string>",
               "      </key>",
               "      <value>",
-              "        <int>2</int>",
+              "        <int>0</int>",
               "      </value>",
               "    </item>",
               "  </ColumnDisplayIndex>",
               "  <ColumnFrozen />",
-              "  <ColumnChecked />",
+              "  <ColumnChecked>",
+              "    <item>",
+              "      <key>",
+              "        <string>Gruppe</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Variabelkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnChecked>",
               "  <ColumnFilter />",
               "  <SelectionFilter />",
               "  <FilterParameters />",
@@ -238,7 +270,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Art].* FROM [dbo].[Art] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -528,7 +560,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[ASSS Indikatorer].* FROM [dbo].[ASSS Indikatorer] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -1700,7 +1732,9 @@
               "CALCULATE(SUM('Alle Data'[Verdi]),",
               "    FILTER(ALL(Tabeller[Tabellnummer]), [Tabellnummer] = \"12189\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Meldingar til barnevernet (antall)\"),",
-              "    FILTER(ALL(Konklusjon[Konklusjonnavn]), [Konklusjonnavn] = \"Til undersøkelse\"),",
+              "    FILTER(ALL('Konklusjon på meldinga'[Konklusjon på meldinganavn]), [Konklusjon på meldinganavn] = ",
+              "        \"Til undersøkelse\"",
+              "    ),",
               "    FILTER(ALL(Handsamingstid[Handsamingstidnavn]), [Handsamingstidnavn] = \"Meldinger i alt\")",
               ")",
               "",
@@ -1709,7 +1743,9 @@
               "    FILTER(ALL('Alle Data'[Tabell]),'Alle Data'[Tabell]=\"12189\"),",
               "    FILTER(ALL(Variabel[Variabelnavn]), [Variabelnavn] = \"Meldingar til barnevernet (antall)\"),",
               "    FILTER(ALL(Handsamingstid[Handsamingstidnavn]), [Handsamingstidnavn] = \"Meldinger i alt\"),",
-              "    FILTER(ALL(Konklusjon[Konklusjonnavn]), [Konklusjonnavn] = \"Meldinger i alt\")",
+              "    FILTER(ALL('Konklusjon på meldinga'[Konklusjon på meldinganavn]), [Konklusjon på meldinganavn] = ",
+              "        \"Meldinger i alt\"",
+              "    )",
               ")",
               "",
               "return (",
@@ -6406,44 +6442,6 @@
             "displayFolder": "Grunnskole"
           },
           {
-            "name": "Samferdselindikatorer",
-            "expression": [
-              "",
-              "SWITCH(",
-              "    SELECTEDVALUE(Indikatoroversikt[Indikatornavn]),",
-              "    \"Andel adkomst- og GS-vei på og/eller over akseptabel standard - tilstandsgrad TG2 (prosent)*\",",
-              "    [SFS Andel adkomst- og GS-vei på og/eller over akseptabel standard - tilstandsgrad TG2 (prosent)*],",
-              "    \"Andel gate og samlevei på og/eller over akseptabel standard - tilstandsgrad TG1 (prosent)*\",",
-              "    [SFS Andel gate og samlevei på og/eller over akseptabel standard - tilstandsgrad TG1 (prosent)*],",
-              "    \"Antall km tilrettelagt for syklende som kommunen har ansvaret for per 10 000 innbyggere\",",
-              "    [SFS Antall km tilrettelagt for syklende som kommunen har ansvaret for per 10 000 innbyggere],",
-              "    \"Brutto driftsutgifter eksklusiv avskrivninger samferdsel per km (kroner)\",",
-              "    [SFS Brutto driftsutgifter eksklusiv avskrivninger samferdsel per km (kroner)],",
-              "    \"Drenering/overvann, kroner per meter vei\",",
-              "    [SFS Drenering/overvann, kroner per meter vei],",
-              "    \"Investeringer til veidekker (asfalt) per meter vei (kroner)\",",
-              "    [SFS Investeringer til veidekker (asfalt) per meter vei (kroner)],",
-              "    \"Kommunale veier i km per 10 000 innbyggere\",",
-              "    [SFS Kommunale veier i km per 10 000 innbyggere],",
-              "    \"Kostnad per meter vei for å komme over akseptabel standard (kroner)*\",",
-              "    [SFS Kostnad per meter vei for å komme over akseptabel standard (kroner)*],",
-              "    \"Kostnader til gatebelysning per lyspunkt, kommunale veier\",",
-              "    [SFS Kostnader til gatebelysning per lyspunkt, kommunale veier],",
-              "    \"Renhold, kroner per meter vei\",",
-              "    [SFS Renhold, kroner per meter vei],",
-              "    \"Sykefravær samferdsel (PAI) (prosent)*\",",
-              "    [SFS Sykefravær samferdsel (PAI) (prosent)*],",
-              "    \"Trafikksikkerhet inkludert skilting og veimerking, kroner per meter vei\",",
-              "    [SFS Trafikksikkerhet inkludert skilting og veimerking, kroner per meter vei],",
-              "    \"Veidekker, kroner per meter vei\",",
-              "    [SFS Veidekker, kroner per meter vei],",
-              "    \"Vinterdrift, kroner per meter vei\",",
-              "    [SFS Vinterdrift, kroner per meter vei]",
-              ")"
-            ],
-            "displayFolder": "Andre"
-          },
-          {
             "name": "BHG Foreldretilfredshet barnehage*",
             "expression": [
               "",
@@ -6794,7 +6792,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Energitype].* FROM [dbo].[Energitype] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -7035,7 +7033,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Funksjon].* FROM [dbo].[Funksjon] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -7310,7 +7308,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Region].* FROM [dbo].[Region] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -7663,16 +7661,14 @@
             "sourceProviderType": "WChar"
           },
           {
-            "name": "Tabellnavn",
+            "name": "Gruppe",
             "dataType": "string",
-            "sourceColumn": "Tabellnavn",
-            "sourceProviderType": "WChar"
+            "sourceColumn": "Gruppe"
           },
           {
-            "name": "TabellNummerNavn",
+            "name": "Kilde",
             "dataType": "string",
-            "sourceColumn": "TabellNummerNavn",
-            "sourceProviderType": "WChar"
+            "sourceColumn": "Kilde"
           }
         ],
         "partitions": [
@@ -7682,7 +7678,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Tabeller].* FROM [dbo].[Tabeller] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -7707,18 +7703,18 @@
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>Tabellnavn</string>",
+                  "        <string>Kilde</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>116</int>",
+                  "        <int>52</int>",
                   "      </value>",
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>TabellNummerNavn</string>",
+                  "        <string>Gruppe</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>180</int>",
+                  "        <int>65</int>",
                   "      </value>",
                   "    </item>",
                   "  </ColumnWidths>",
@@ -7733,23 +7729,40 @@
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>Tabellnavn</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>1</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>TabellNummerNavn</string>",
+                  "        <string>Kilde</string>",
                   "      </key>",
                   "      <value>",
                   "        <int>2</int>",
                   "      </value>",
                   "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Gruppe</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>1</int>",
+                  "      </value>",
+                  "    </item>",
                   "  </ColumnDisplayIndex>",
                   "  <ColumnFrozen />",
-                  "  <ColumnChecked />",
+                  "  <ColumnChecked>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Gruppe</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Kilde</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnChecked>",
                   "  <ColumnFilter />",
                   "  <SelectionFilter />",
                   "  <FilterParameters />",
@@ -7795,18 +7808,18 @@
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>Tabellnavn</string>",
+              "        <string>Kilde</string>",
               "      </key>",
               "      <value>",
-              "        <int>116</int>",
+              "        <int>52</int>",
               "      </value>",
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>TabellNummerNavn</string>",
+              "        <string>Gruppe</string>",
               "      </key>",
               "      <value>",
-              "        <int>180</int>",
+              "        <int>65</int>",
               "      </value>",
               "    </item>",
               "  </ColumnWidths>",
@@ -7821,179 +7834,15 @@
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>Tabellnavn</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>1</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>TabellNummerNavn</string>",
+              "        <string>Kilde</string>",
               "      </key>",
               "      <value>",
               "        <int>2</int>",
               "      </value>",
               "    </item>",
-              "  </ColumnDisplayIndex>",
-              "  <ColumnFrozen />",
-              "  <ColumnChecked />",
-              "  <ColumnFilter />",
-              "  <SelectionFilter />",
-              "  <FilterParameters />",
-              "  <IsSortDescending>false</IsSortDescending>",
-              "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "År",
-        "columns": [
-          {
-            "name": "År",
-            "dataType": "int64",
-            "sourceColumn": "År",
-            "sourceProviderType": "Integer"
-          },
-          {
-            "name": "Årstall",
-            "dataType": "string",
-            "sourceColumn": "Årstall"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "År",
-            "dataView": "full",
-            "source": {
-              "type": "query",
-              "query": " SELECT [dbo].[År].* FROM [dbo].[År] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
-            },
-            "annotations": [
-              {
-                "name": "TableWidgetSerialization",
-                "value": [
-                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
-                  "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
-                  "  <ColumnSuggestedType />",
-                  "  <ColumnFormat />",
-                  "  <ColumnAccuracy />",
-                  "  <ColumnCurrencySymbol />",
-                  "  <ColumnPositivePattern />",
-                  "  <ColumnNegativePattern />",
-                  "  <ColumnWidths>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>År</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>48</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Årstall</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>70</int>",
-                  "      </value>",
-                  "    </item>",
-                  "  </ColumnWidths>",
-                  "  <ColumnDisplayIndex>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>År</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>0</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Årstall</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>1</int>",
-                  "      </value>",
-                  "    </item>",
-                  "  </ColumnDisplayIndex>",
-                  "  <ColumnFrozen />",
-                  "  <ColumnChecked>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Årstall</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <boolean>true</boolean>",
-                  "      </value>",
-                  "    </item>",
-                  "  </ColumnChecked>",
-                  "  <ColumnFilter />",
-                  "  <SelectionFilter />",
-                  "  <FilterParameters />",
-                  "  <IsSortDescending>false</IsSortDescending>",
-                  "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
-                ]
-              }
-            ]
-          }
-        ],
-        "annotations": [
-          {
-            "name": "_TM_ExtProp_QueryDefinition",
-            "value": " SELECT [dbo].[År].* FROM [dbo].[År] "
-          },
-          {
-            "name": "_TM_ExtProp_DbTableName",
-            "value": "År"
-          },
-          {
-            "name": "_TM_ExtProp_DbSchemaName",
-            "value": "dbo"
-          },
-          {
-            "name": "TableWidgetSerialization",
-            "value": [
-              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
-              "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
-              "  <ColumnSuggestedType />",
-              "  <ColumnFormat />",
-              "  <ColumnAccuracy />",
-              "  <ColumnCurrencySymbol />",
-              "  <ColumnPositivePattern />",
-              "  <ColumnNegativePattern />",
-              "  <ColumnWidths>",
               "    <item>",
               "      <key>",
-              "        <string>År</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>48</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Årstall</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>70</int>",
-              "      </value>",
-              "    </item>",
-              "  </ColumnWidths>",
-              "  <ColumnDisplayIndex>",
-              "    <item>",
-              "      <key>",
-              "        <string>År</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>0</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Årstall</string>",
+              "        <string>Gruppe</string>",
               "      </key>",
               "      <value>",
               "        <int>1</int>",
@@ -8004,7 +7853,15 @@
               "  <ColumnChecked>",
               "    <item>",
               "      <key>",
-              "        <string>Årstall</string>",
+              "        <string>Gruppe</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Kilde</string>",
               "      </key>",
               "      <value>",
               "        <boolean>true</boolean>",
@@ -8074,11 +7931,6 @@
             "sourceColumn": "Handsamingstidkode"
           },
           {
-            "name": "Konklusjonkode",
-            "dataType": "string",
-            "sourceColumn": "Konklusjonkode"
-          },
-          {
             "name": "Tiltakskategorikode",
             "dataType": "string",
             "sourceColumn": "Tiltakskategorikode"
@@ -8089,11 +7941,6 @@
             "sourceColumn": "Alderkode"
           },
           {
-            "name": "Omsorgs-/hjelpetiltakkode",
-            "dataType": "string",
-            "sourceColumn": "Omsorgs-/hjelpetiltakkode"
-          },
-          {
             "name": "Tjenestegrupperkode",
             "dataType": "string",
             "sourceColumn": "Tjenestegrupperkode"
@@ -8102,11 +7949,6 @@
             "name": "Utdanningkode",
             "dataType": "string",
             "sourceColumn": "Utdanningkode"
-          },
-          {
-            "name": "Postkode",
-            "dataType": "string",
-            "sourceColumn": "Postkode"
           },
           {
             "name": "Regnskapsbegrepkode",
@@ -8189,9 +8031,29 @@
             "sourceColumn": "Søknadstypekode"
           },
           {
-            "name": "Eksisterende/nyekode",
+            "name": "Handsamingstid av meldingakode",
             "dataType": "string",
-            "sourceColumn": "Eksisterende/nyekode"
+            "sourceColumn": "Handsamingstid av meldingakode"
+          },
+          {
+            "name": "Konklusjon på meldingakode",
+            "dataType": "string",
+            "sourceColumn": "Konklusjon på meldingakode"
+          },
+          {
+            "name": "Konklusjon på undersøking avsluttakode",
+            "dataType": "string",
+            "sourceColumn": "Konklusjon på undersøking avsluttakode"
+          },
+          {
+            "name": " omsorgs-/hjelpetiltakkode",
+            "dataType": "string",
+            "sourceColumn": " omsorgs-/hjelpetiltakkode"
+          },
+          {
+            "name": "Personellets utdanningkode",
+            "dataType": "string",
+            "sourceColumn": "Personellets utdanningkode"
           }
         ],
         "partitions": [
@@ -8201,7 +8063,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Alle Data].* FROM [dbo].[Alle Data] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -8290,10 +8152,10 @@
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>Konklusjonkode</string>",
+                  "        <string> omsorgs-/hjelpetiltakkode</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>151</int>",
+                  "        <int>156</int>",
                   "      </value>",
                   "    </item>",
                   "    <item>",
@@ -8322,10 +8184,10 @@
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>Omsorgs-/hjelpetiltakkode</string>",
+                  "        <string>Konklusjon på undersøking avsluttakode</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>155</int>",
+                  "        <int>222</int>",
                   "      </value>",
                   "    </item>",
                   "    <item>",
@@ -8346,10 +8208,10 @@
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>Postkode</string>",
+                  "        <string>Konklusjon på meldingakode</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>103</int>",
+                  "        <int>164</int>",
                   "      </value>",
                   "    </item>",
                   "    <item>",
@@ -8474,10 +8336,18 @@
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>Eksisterende/nyekode</string>",
+                  "        <string>Handsamingstid av meldingakode</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>136</int>",
+                  "        <int>188</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Personellets utdanningkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>162</int>",
                   "      </value>",
                   "    </item>",
                   "  </ColumnWidths>",
@@ -8556,10 +8426,10 @@
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>Konklusjonkode</string>",
+                  "        <string> omsorgs-/hjelpetiltakkode</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>9</int>",
+                  "        <int>32</int>",
                   "      </value>",
                   "    </item>",
                   "    <item>",
@@ -8567,7 +8437,7 @@
                   "        <string>Tiltakskategorikode</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>10</int>",
+                  "        <int>9</int>",
                   "      </value>",
                   "    </item>",
                   "    <item>",
@@ -8575,7 +8445,7 @@
                   "        <string>Alderkode</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>11</int>",
+                  "        <int>10</int>",
                   "      </value>",
                   "    </item>",
                   "    <item>",
@@ -8583,156 +8453,12 @@
                   "        <string>Tjenesteområdekode</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>27</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Omsorgs-/hjelpetiltakkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>12</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Tjenestegrupperkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>13</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Utdanningkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>14</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Postkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>15</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Regnskapsbegrepkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>16</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Avtaleformkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>17</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Helsekontrollerkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>18</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Eieformkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>19</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Årstrinnkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>20</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Eierforholdkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>21</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Oppholdstidkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>22</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Kjønnkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>23</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Stillingstypekode</string>",
-                  "      </key>",
-                  "      <value>",
                   "        <int>24</int>",
                   "      </value>",
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>Kompetansekode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>25</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Kildekode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>26</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Nettverkkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>28</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Lærerkompetansekode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>29</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Rammevilkårkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>30</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Søknadstypekode</string>",
+                  "        <string>Konklusjon på undersøking avsluttakode</string>",
                   "      </key>",
                   "      <value>",
                   "        <int>31</int>",
@@ -8740,10 +8466,162 @@
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>Eksisterende/nyekode</string>",
+                  "        <string>Tjenestegrupperkode</string>",
                   "      </key>",
                   "      <value>",
-                  "        <int>32</int>",
+                  "        <int>11</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Utdanningkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>12</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Konklusjon på meldingakode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>30</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Regnskapsbegrepkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>13</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Avtaleformkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>14</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Helsekontrollerkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>15</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Eieformkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>16</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Årstrinnkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>17</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Eierforholdkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>18</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Oppholdstidkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>19</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Kjønnkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>20</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Stillingstypekode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>21</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Kompetansekode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>22</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Kildekode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>23</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Nettverkkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>25</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Lærerkompetansekode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>26</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Rammevilkårkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>27</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Søknadstypekode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>28</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Handsamingstid av meldingakode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>29</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Personellets utdanningkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>33</int>",
                   "      </value>",
                   "    </item>",
                   "  </ColumnDisplayIndex>",
@@ -8791,7 +8669,7 @@
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>Konklusjonkode</string>",
+                  "        <string> omsorgs-/hjelpetiltakkode</string>",
                   "      </key>",
                   "      <value>",
                   "        <boolean>true</boolean>",
@@ -8823,7 +8701,7 @@
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>Omsorgs-/hjelpetiltakkode</string>",
+                  "        <string>Konklusjon på undersøking avsluttakode</string>",
                   "      </key>",
                   "      <value>",
                   "        <boolean>true</boolean>",
@@ -8847,7 +8725,7 @@
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>Postkode</string>",
+                  "        <string>Konklusjon på meldingakode</string>",
                   "      </key>",
                   "      <value>",
                   "        <boolean>true</boolean>",
@@ -8975,7 +8853,15 @@
                   "    </item>",
                   "    <item>",
                   "      <key>",
-                  "        <string>Eksisterende/nyekode</string>",
+                  "        <string>Handsamingstid av meldingakode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Personellets utdanningkode</string>",
                   "      </key>",
                   "      <value>",
                   "        <boolean>true</boolean>",
@@ -9097,10 +8983,10 @@
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>Konklusjonkode</string>",
+              "        <string> omsorgs-/hjelpetiltakkode</string>",
               "      </key>",
               "      <value>",
-              "        <int>151</int>",
+              "        <int>156</int>",
               "      </value>",
               "    </item>",
               "    <item>",
@@ -9129,10 +9015,10 @@
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>Omsorgs-/hjelpetiltakkode</string>",
+              "        <string>Konklusjon på undersøking avsluttakode</string>",
               "      </key>",
               "      <value>",
-              "        <int>155</int>",
+              "        <int>222</int>",
               "      </value>",
               "    </item>",
               "    <item>",
@@ -9153,10 +9039,10 @@
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>Postkode</string>",
+              "        <string>Konklusjon på meldingakode</string>",
               "      </key>",
               "      <value>",
-              "        <int>103</int>",
+              "        <int>164</int>",
               "      </value>",
               "    </item>",
               "    <item>",
@@ -9281,10 +9167,18 @@
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>Eksisterende/nyekode</string>",
+              "        <string>Handsamingstid av meldingakode</string>",
               "      </key>",
               "      <value>",
-              "        <int>136</int>",
+              "        <int>188</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Personellets utdanningkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>162</int>",
               "      </value>",
               "    </item>",
               "  </ColumnWidths>",
@@ -9363,10 +9257,10 @@
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>Konklusjonkode</string>",
+              "        <string> omsorgs-/hjelpetiltakkode</string>",
               "      </key>",
               "      <value>",
-              "        <int>9</int>",
+              "        <int>32</int>",
               "      </value>",
               "    </item>",
               "    <item>",
@@ -9374,7 +9268,7 @@
               "        <string>Tiltakskategorikode</string>",
               "      </key>",
               "      <value>",
-              "        <int>10</int>",
+              "        <int>9</int>",
               "      </value>",
               "    </item>",
               "    <item>",
@@ -9382,7 +9276,7 @@
               "        <string>Alderkode</string>",
               "      </key>",
               "      <value>",
-              "        <int>11</int>",
+              "        <int>10</int>",
               "      </value>",
               "    </item>",
               "    <item>",
@@ -9390,156 +9284,12 @@
               "        <string>Tjenesteområdekode</string>",
               "      </key>",
               "      <value>",
-              "        <int>27</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Omsorgs-/hjelpetiltakkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>12</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Tjenestegrupperkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>13</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Utdanningkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>14</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Postkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>15</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Regnskapsbegrepkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>16</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Avtaleformkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>17</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Helsekontrollerkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>18</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Eieformkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>19</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Årstrinnkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>20</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Eierforholdkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>21</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Oppholdstidkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>22</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Kjønnkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>23</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Stillingstypekode</string>",
-              "      </key>",
-              "      <value>",
               "        <int>24</int>",
               "      </value>",
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>Kompetansekode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>25</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Kildekode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>26</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Nettverkkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>28</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Lærerkompetansekode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>29</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Rammevilkårkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>30</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Søknadstypekode</string>",
+              "        <string>Konklusjon på undersøking avsluttakode</string>",
               "      </key>",
               "      <value>",
               "        <int>31</int>",
@@ -9547,10 +9297,162 @@
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>Eksisterende/nyekode</string>",
+              "        <string>Tjenestegrupperkode</string>",
               "      </key>",
               "      <value>",
-              "        <int>32</int>",
+              "        <int>11</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Utdanningkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>12</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Konklusjon på meldingakode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>30</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Regnskapsbegrepkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>13</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Avtaleformkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>14</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Helsekontrollerkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>15</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Eieformkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>16</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Årstrinnkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>17</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Eierforholdkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>18</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Oppholdstidkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>19</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Kjønnkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>20</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Stillingstypekode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>21</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Kompetansekode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>22</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Kildekode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>23</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Nettverkkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>25</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Lærerkompetansekode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>26</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Rammevilkårkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>27</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Søknadstypekode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>28</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Handsamingstid av meldingakode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>29</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Personellets utdanningkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>33</int>",
               "      </value>",
               "    </item>",
               "  </ColumnDisplayIndex>",
@@ -9598,7 +9500,7 @@
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>Konklusjonkode</string>",
+              "        <string> omsorgs-/hjelpetiltakkode</string>",
               "      </key>",
               "      <value>",
               "        <boolean>true</boolean>",
@@ -9630,7 +9532,7 @@
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>Omsorgs-/hjelpetiltakkode</string>",
+              "        <string>Konklusjon på undersøking avsluttakode</string>",
               "      </key>",
               "      <value>",
               "        <boolean>true</boolean>",
@@ -9654,7 +9556,7 @@
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>Postkode</string>",
+              "        <string>Konklusjon på meldingakode</string>",
               "      </key>",
               "      <value>",
               "        <boolean>true</boolean>",
@@ -9782,7 +9684,15 @@
               "    </item>",
               "    <item>",
               "      <key>",
-              "        <string>Eksisterende/nyekode</string>",
+              "        <string>Handsamingstid av meldingakode</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Personellets utdanningkode</string>",
               "      </key>",
               "      <value>",
               "        <boolean>true</boolean>",
@@ -9824,7 +9734,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Alder].* FROM [dbo].[Alder] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -10065,7 +9975,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Handsamingstid].* FROM [dbo].[Handsamingstid] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -10306,7 +10216,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Kilde].* FROM [dbo].[Kilde] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -10522,563 +10432,6 @@
         ]
       },
       {
-        "name": "Konklusjon",
-        "columns": [
-          {
-            "name": "Konklusjonkode",
-            "dataType": "string",
-            "sourceColumn": "Konklusjonkode"
-          },
-          {
-            "name": "Konklusjonnavn",
-            "dataType": "string",
-            "sourceColumn": "Konklusjonnavn"
-          },
-          {
-            "name": "KonklusjonkodeNavn",
-            "dataType": "string",
-            "sourceColumn": "KonklusjonkodeNavn"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "Konklusjon",
-            "dataView": "full",
-            "source": {
-              "type": "query",
-              "query": " SELECT [dbo].[Konklusjon].* FROM [dbo].[Konklusjon] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
-            },
-            "annotations": [
-              {
-                "name": "TableWidgetSerialization",
-                "value": [
-                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
-                  "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
-                  "  <ColumnSuggestedType />",
-                  "  <ColumnFormat />",
-                  "  <ColumnAccuracy />",
-                  "  <ColumnCurrencySymbol />",
-                  "  <ColumnPositivePattern />",
-                  "  <ColumnNegativePattern />",
-                  "  <ColumnWidths>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Konklusjonkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>151</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Konklusjonnavn</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>151</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>KonklusjonkodeNavn</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>187</int>",
-                  "      </value>",
-                  "    </item>",
-                  "  </ColumnWidths>",
-                  "  <ColumnDisplayIndex>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Konklusjonkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>0</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Konklusjonnavn</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>1</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>KonklusjonkodeNavn</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>2</int>",
-                  "      </value>",
-                  "    </item>",
-                  "  </ColumnDisplayIndex>",
-                  "  <ColumnFrozen />",
-                  "  <ColumnChecked>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Konklusjonkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <boolean>true</boolean>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Konklusjonnavn</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <boolean>true</boolean>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>KonklusjonkodeNavn</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <boolean>true</boolean>",
-                  "      </value>",
-                  "    </item>",
-                  "  </ColumnChecked>",
-                  "  <ColumnFilter />",
-                  "  <SelectionFilter />",
-                  "  <FilterParameters />",
-                  "  <IsSortDescending>false</IsSortDescending>",
-                  "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
-                ]
-              }
-            ]
-          }
-        ],
-        "annotations": [
-          {
-            "name": "_TM_ExtProp_QueryDefinition",
-            "value": " SELECT [dbo].[Konklusjon].* FROM [dbo].[Konklusjon] "
-          },
-          {
-            "name": "_TM_ExtProp_DbTableName",
-            "value": "Konklusjon"
-          },
-          {
-            "name": "_TM_ExtProp_DbSchemaName",
-            "value": "dbo"
-          },
-          {
-            "name": "TableWidgetSerialization",
-            "value": [
-              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
-              "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
-              "  <ColumnSuggestedType />",
-              "  <ColumnFormat />",
-              "  <ColumnAccuracy />",
-              "  <ColumnCurrencySymbol />",
-              "  <ColumnPositivePattern />",
-              "  <ColumnNegativePattern />",
-              "  <ColumnWidths>",
-              "    <item>",
-              "      <key>",
-              "        <string>Konklusjonkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>151</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Konklusjonnavn</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>151</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>KonklusjonkodeNavn</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>187</int>",
-              "      </value>",
-              "    </item>",
-              "  </ColumnWidths>",
-              "  <ColumnDisplayIndex>",
-              "    <item>",
-              "      <key>",
-              "        <string>Konklusjonkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>0</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Konklusjonnavn</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>1</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>KonklusjonkodeNavn</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>2</int>",
-              "      </value>",
-              "    </item>",
-              "  </ColumnDisplayIndex>",
-              "  <ColumnFrozen />",
-              "  <ColumnChecked>",
-              "    <item>",
-              "      <key>",
-              "        <string>Konklusjonkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <boolean>true</boolean>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Konklusjonnavn</string>",
-              "      </key>",
-              "      <value>",
-              "        <boolean>true</boolean>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>KonklusjonkodeNavn</string>",
-              "      </key>",
-              "      <value>",
-              "        <boolean>true</boolean>",
-              "      </value>",
-              "    </item>",
-              "  </ColumnChecked>",
-              "  <ColumnFilter />",
-              "  <SelectionFilter />",
-              "  <FilterParameters />",
-              "  <IsSortDescending>false</IsSortDescending>",
-              "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Omsorgs-hjelpetiltak",
-        "columns": [
-          {
-            "name": "Omsorgs-/hjelpetiltakkode",
-            "dataType": "string",
-            "sourceColumn": "Omsorgs-/hjelpetiltakkode"
-          },
-          {
-            "name": "Omsorgs-/hjelpetiltaknavn",
-            "dataType": "string",
-            "sourceColumn": "Omsorgs-/hjelpetiltaknavn"
-          },
-          {
-            "name": "Omsorgs-/hjelpetiltakkodeNavn",
-            "dataType": "string",
-            "sourceColumn": "Omsorgs-/hjelpetiltakkodeNavn"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "Omsorgs-hjelpetiltak",
-            "dataView": "full",
-            "source": {
-              "type": "query",
-              "query": " SELECT [dbo].[Omsorgs-/hjelpetiltak].* FROM [dbo].[Omsorgs-/hjelpetiltak] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
-            },
-            "annotations": [
-              {
-                "name": "TableWidgetSerialization",
-                "value": [
-                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
-                  "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
-                  "  <ColumnSuggestedType />",
-                  "  <ColumnFormat />",
-                  "  <ColumnAccuracy />",
-                  "  <ColumnCurrencySymbol />",
-                  "  <ColumnPositivePattern />",
-                  "  <ColumnNegativePattern />",
-                  "  <ColumnWidths>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Omsorgs-/hjelpetiltakkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>226</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Omsorgs-/hjelpetiltaknavn</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>226</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Omsorgs-/hjelpetiltakkodeNavn</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>262</int>",
-                  "      </value>",
-                  "    </item>",
-                  "  </ColumnWidths>",
-                  "  <ColumnDisplayIndex>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Omsorgs-/hjelpetiltakkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>0</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Omsorgs-/hjelpetiltaknavn</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>1</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Omsorgs-/hjelpetiltakkodeNavn</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>2</int>",
-                  "      </value>",
-                  "    </item>",
-                  "  </ColumnDisplayIndex>",
-                  "  <ColumnFrozen />",
-                  "  <ColumnChecked>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Omsorgs-/hjelpetiltakkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <boolean>true</boolean>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Omsorgs-/hjelpetiltaknavn</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <boolean>true</boolean>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Omsorgs-/hjelpetiltakkodeNavn</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <boolean>true</boolean>",
-                  "      </value>",
-                  "    </item>",
-                  "  </ColumnChecked>",
-                  "  <ColumnFilter />",
-                  "  <SelectionFilter />",
-                  "  <FilterParameters />",
-                  "  <IsSortDescending>false</IsSortDescending>",
-                  "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
-                ]
-              }
-            ]
-          }
-        ],
-        "annotations": [
-          {
-            "name": "_TM_ExtProp_QueryDefinition",
-            "value": " SELECT [dbo].[Omsorgs-/hjelpetiltak].* FROM [dbo].[Omsorgs-/hjelpetiltak] "
-          },
-          {
-            "name": "_TM_ExtProp_DbTableName",
-            "value": "Omsorgs-/hjelpetiltak"
-          },
-          {
-            "name": "_TM_ExtProp_DbSchemaName",
-            "value": "dbo"
-          },
-          {
-            "name": "TableWidgetSerialization",
-            "value": [
-              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
-              "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
-              "  <ColumnSuggestedType />",
-              "  <ColumnFormat />",
-              "  <ColumnAccuracy />",
-              "  <ColumnCurrencySymbol />",
-              "  <ColumnPositivePattern />",
-              "  <ColumnNegativePattern />",
-              "  <ColumnWidths>",
-              "    <item>",
-              "      <key>",
-              "        <string>Omsorgs-/hjelpetiltakkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>226</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Omsorgs-/hjelpetiltaknavn</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>226</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Omsorgs-/hjelpetiltakkodeNavn</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>262</int>",
-              "      </value>",
-              "    </item>",
-              "  </ColumnWidths>",
-              "  <ColumnDisplayIndex>",
-              "    <item>",
-              "      <key>",
-              "        <string>Omsorgs-/hjelpetiltakkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>0</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Omsorgs-/hjelpetiltaknavn</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>1</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Omsorgs-/hjelpetiltakkodeNavn</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>2</int>",
-              "      </value>",
-              "    </item>",
-              "  </ColumnDisplayIndex>",
-              "  <ColumnFrozen />",
-              "  <ColumnChecked>",
-              "    <item>",
-              "      <key>",
-              "        <string>Omsorgs-/hjelpetiltakkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <boolean>true</boolean>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Omsorgs-/hjelpetiltaknavn</string>",
-              "      </key>",
-              "      <value>",
-              "        <boolean>true</boolean>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Omsorgs-/hjelpetiltakkodeNavn</string>",
-              "      </key>",
-              "      <value>",
-              "        <boolean>true</boolean>",
-              "      </value>",
-              "    </item>",
-              "  </ColumnChecked>",
-              "  <ColumnFilter />",
-              "  <SelectionFilter />",
-              "  <FilterParameters />",
-              "  <IsSortDescending>false</IsSortDescending>",
-              "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Sammenslåtte Regioner",
-        "columns": [
-          {
-            "name": "Kode",
-            "dataType": "string",
-            "sourceColumn": "Kode",
-            "sourceProviderType": "Char"
-          },
-          {
-            "name": "Navn",
-            "dataType": "string",
-            "sourceColumn": "Navn",
-            "sourceProviderType": "Char"
-          },
-          {
-            "name": "KodeNummernavn",
-            "dataType": "string",
-            "sourceColumn": "KodeNummernavn",
-            "sourceProviderType": "Char"
-          },
-          {
-            "name": "Kategori",
-            "dataType": "string",
-            "sourceColumn": "Kategori",
-            "sourceProviderType": "Char"
-          },
-          {
-            "name": "GyldigFraDato",
-            "dataType": "dateTime",
-            "sourceColumn": "GyldigFraDato",
-            "formatString": "General Date",
-            "sourceProviderType": "DBTimeStamp"
-          },
-          {
-            "name": "GyldigTilDato",
-            "dataType": "dateTime",
-            "sourceColumn": "GyldigTilDato",
-            "formatString": "General Date",
-            "sourceProviderType": "DBTimeStamp"
-          },
-          {
-            "name": "SammenslåingsDato",
-            "dataType": "dateTime",
-            "sourceColumn": "SammenslåingsDato",
-            "formatString": "General Date",
-            "sourceProviderType": "DBTimeStamp"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "Sammenslåtte Regioner",
-            "dataView": "full",
-            "source": {
-              "type": "query",
-              "query": " SELECT [dbo].[Sammenslåtte Regioner].* FROM [dbo].[Sammenslåtte Regioner] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
-            }
-          }
-        ],
-        "annotations": [
-          {
-            "name": "_TM_ExtProp_QueryDefinition",
-            "value": " SELECT [dbo].[Sammenslåtte Regioner].* FROM [dbo].[Sammenslåtte Regioner] "
-          },
-          {
-            "name": "_TM_ExtProp_DbTableName",
-            "value": "Sammenslåtte Regioner"
-          },
-          {
-            "name": "_TM_ExtProp_DbSchemaName",
-            "value": "dbo"
-          }
-        ]
-      },
-      {
         "name": "Tiltakskategori",
         "columns": [
           {
@@ -11104,7 +10457,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Tiltakskategori].* FROM [dbo].[Tiltakskategori] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -11345,7 +10698,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Tjenestegrupper].* FROM [dbo].[Tjenestegrupper] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -11586,7 +10939,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Utdanning].* FROM [dbo].[Utdanning] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -11802,247 +11155,6 @@
         ]
       },
       {
-        "name": "Post",
-        "columns": [
-          {
-            "name": "Postkode",
-            "dataType": "string",
-            "sourceColumn": "Postkode"
-          },
-          {
-            "name": "Postnavn",
-            "dataType": "string",
-            "sourceColumn": "Postnavn"
-          },
-          {
-            "name": "PostkodeNavn",
-            "dataType": "string",
-            "sourceColumn": "PostkodeNavn"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "Post",
-            "dataView": "full",
-            "source": {
-              "type": "query",
-              "query": " SELECT [dbo].[Post].* FROM [dbo].[Post] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
-            },
-            "annotations": [
-              {
-                "name": "TableWidgetSerialization",
-                "value": [
-                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
-                  "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
-                  "  <ColumnSuggestedType />",
-                  "  <ColumnFormat />",
-                  "  <ColumnAccuracy />",
-                  "  <ColumnCurrencySymbol />",
-                  "  <ColumnPositivePattern />",
-                  "  <ColumnNegativePattern />",
-                  "  <ColumnWidths>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Postkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>103</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Postnavn</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>103</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>PostkodeNavn</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>139</int>",
-                  "      </value>",
-                  "    </item>",
-                  "  </ColumnWidths>",
-                  "  <ColumnDisplayIndex>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Postkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>0</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Postnavn</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>1</int>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>PostkodeNavn</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <int>2</int>",
-                  "      </value>",
-                  "    </item>",
-                  "  </ColumnDisplayIndex>",
-                  "  <ColumnFrozen />",
-                  "  <ColumnChecked>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Postkode</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <boolean>true</boolean>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>Postnavn</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <boolean>true</boolean>",
-                  "      </value>",
-                  "    </item>",
-                  "    <item>",
-                  "      <key>",
-                  "        <string>PostkodeNavn</string>",
-                  "      </key>",
-                  "      <value>",
-                  "        <boolean>true</boolean>",
-                  "      </value>",
-                  "    </item>",
-                  "  </ColumnChecked>",
-                  "  <ColumnFilter />",
-                  "  <SelectionFilter />",
-                  "  <FilterParameters />",
-                  "  <IsSortDescending>false</IsSortDescending>",
-                  "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
-                ]
-              }
-            ]
-          }
-        ],
-        "annotations": [
-          {
-            "name": "_TM_ExtProp_QueryDefinition",
-            "value": " SELECT [dbo].[Post].* FROM [dbo].[Post] "
-          },
-          {
-            "name": "_TM_ExtProp_DbTableName",
-            "value": "Post"
-          },
-          {
-            "name": "_TM_ExtProp_DbSchemaName",
-            "value": "dbo"
-          },
-          {
-            "name": "TableWidgetSerialization",
-            "value": [
-              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
-              "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
-              "  <ColumnSuggestedType />",
-              "  <ColumnFormat />",
-              "  <ColumnAccuracy />",
-              "  <ColumnCurrencySymbol />",
-              "  <ColumnPositivePattern />",
-              "  <ColumnNegativePattern />",
-              "  <ColumnWidths>",
-              "    <item>",
-              "      <key>",
-              "        <string>Postkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>103</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Postnavn</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>103</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>PostkodeNavn</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>139</int>",
-              "      </value>",
-              "    </item>",
-              "  </ColumnWidths>",
-              "  <ColumnDisplayIndex>",
-              "    <item>",
-              "      <key>",
-              "        <string>Postkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>0</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Postnavn</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>1</int>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>PostkodeNavn</string>",
-              "      </key>",
-              "      <value>",
-              "        <int>2</int>",
-              "      </value>",
-              "    </item>",
-              "  </ColumnDisplayIndex>",
-              "  <ColumnFrozen />",
-              "  <ColumnChecked>",
-              "    <item>",
-              "      <key>",
-              "        <string>Postkode</string>",
-              "      </key>",
-              "      <value>",
-              "        <boolean>true</boolean>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>Postnavn</string>",
-              "      </key>",
-              "      <value>",
-              "        <boolean>true</boolean>",
-              "      </value>",
-              "    </item>",
-              "    <item>",
-              "      <key>",
-              "        <string>PostkodeNavn</string>",
-              "      </key>",
-              "      <value>",
-              "        <boolean>true</boolean>",
-              "      </value>",
-              "    </item>",
-              "  </ColumnChecked>",
-              "  <ColumnFilter />",
-              "  <SelectionFilter />",
-              "  <FilterParameters />",
-              "  <IsSortDescending>false</IsSortDescending>",
-              "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
-            ]
-          }
-        ]
-      },
-      {
         "name": "Regnskapsbegrep",
         "columns": [
           {
@@ -12068,7 +11180,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Regnskapsbegrep].* FROM [dbo].[Regnskapsbegrep] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -12309,7 +11421,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Avtaleform].* FROM [dbo].[Avtaleform] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -12550,7 +11662,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Helsekontroller].* FROM [dbo].[Helsekontroller] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -12791,7 +11903,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Eieform].* FROM [dbo].[Eieform] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -13032,7 +12144,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Årstrinn].* FROM [dbo].[Årstrinn] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -13273,7 +12385,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Eierforhold].* FROM [dbo].[Eierforhold] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -13514,7 +12626,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Oppholdstid].* FROM [dbo].[Oppholdstid] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -13755,7 +12867,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Kjønn].* FROM [dbo].[Kjønn] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -13996,7 +13108,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Stillingstype].* FROM [dbo].[Stillingstype] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -14237,7 +13349,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Kompetanse].* FROM [dbo].[Kompetanse] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -14478,7 +13590,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Tjenesteområde].* FROM [dbo].[Tjenesteområde] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             },
             "annotations": [
               {
@@ -14722,7 +13834,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Nettverk].* FROM [dbo].[Nettverk] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             }
           }
         ],
@@ -14770,7 +13882,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Lærerkompetanse].* FROM [dbo].[Lærerkompetanse] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             }
           }
         ],
@@ -14818,7 +13930,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Rammevilkår].* FROM [dbo].[Rammevilkår] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             }
           }
         ],
@@ -14866,7 +13978,7 @@
             "source": {
               "type": "query",
               "query": " SELECT [dbo].[Søknadstype].* FROM [dbo].[Søknadstype] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             }
           }
         ],
@@ -14886,61 +13998,27 @@
         ]
       },
       {
-        "name": "Indikatoroversikt",
-        "columns": [
-          {
-            "name": "Indikatornavn",
-            "dataType": "string",
-            "sourceColumn": "Indikatornavn",
-            "sourceProviderType": "Char"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "Indikatoroversikt",
-            "dataView": "full",
-            "source": {
-              "type": "query",
-              "query": " SELECT [dbo].[Indikatoroversikt].* FROM [dbo].[Indikatoroversikt] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
-            }
-          }
-        ],
-        "annotations": [
-          {
-            "name": "_TM_ExtProp_QueryDefinition",
-            "value": " SELECT [dbo].[Indikatoroversikt].* FROM [dbo].[Indikatoroversikt] "
-          },
-          {
-            "name": "_TM_ExtProp_DbTableName",
-            "value": "Indikatoroversikt"
-          },
-          {
-            "name": "_TM_ExtProp_DbSchemaName",
-            "value": "dbo"
-          }
-        ]
-      },
-      {
         "name": "Eksisterendenye",
         "columns": [
           {
-            "name": "Eksisterende/nyekode",
+            "name": "Eksisterende/nye byggkode",
             "dataType": "string",
-            "sourceColumn": "Eksisterende/nyekode",
-            "sourceProviderType": "Char"
+            "sourceColumn": "Eksisterende/nye byggkode"
           },
           {
-            "name": "Eksisterende/nyenavn",
+            "name": "Eksisterende/nye byggnavn",
             "dataType": "string",
-            "sourceColumn": "Eksisterende/nyenavn",
-            "sourceProviderType": "Char"
+            "sourceColumn": "Eksisterende/nye byggnavn"
           },
           {
-            "name": "Eksisterende/nyekodeNavn",
+            "name": "Eksisterende/nye byggkodeNavn",
             "dataType": "string",
-            "sourceColumn": "Eksisterende/nyekodeNavn",
-            "sourceProviderType": "Char"
+            "sourceColumn": "Eksisterende/nye byggkodeNavn"
+          },
+          {
+            "name": "Tabellkode",
+            "dataType": "string",
+            "sourceColumn": "Tabellkode"
           }
         ],
         "partitions": [
@@ -14949,19 +14027,668 @@
             "dataView": "full",
             "source": {
               "type": "query",
-              "query": " SELECT [dbo].[Eksisterende/nye].* FROM [dbo].[Eksisterende/nye] ",
-              "dataSource": "VK-SXD0E-002;Reporting_ASSS"
+              "query": " SELECT [dbo].[Eksisterende/nye bygg].* FROM [dbo].[Eksisterende/nye bygg] ",
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
+            },
+            "annotations": [
+              {
+                "name": "TableWidgetSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
+                  "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
+                  "  <ColumnSuggestedType />",
+                  "  <ColumnFormat />",
+                  "  <ColumnAccuracy />",
+                  "  <ColumnCurrencySymbol />",
+                  "  <ColumnPositivePattern />",
+                  "  <ColumnNegativePattern />",
+                  "  <ColumnWidths>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Eksisterende/nye byggkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>163</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Eksisterende/nye byggnavn</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>164</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Eksisterende/nye byggkodeNavn</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>188</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Tabellkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>81</int>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnWidths>",
+                  "  <ColumnDisplayIndex>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Eksisterende/nye byggkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>0</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Eksisterende/nye byggnavn</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>1</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Eksisterende/nye byggkodeNavn</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>2</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Tabellkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>3</int>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnDisplayIndex>",
+                  "  <ColumnFrozen />",
+                  "  <ColumnChecked>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Eksisterende/nye byggkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Eksisterende/nye byggnavn</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Eksisterende/nye byggkodeNavn</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Tabellkode</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnChecked>",
+                  "  <ColumnFilter />",
+                  "  <SelectionFilter />",
+                  "  <FilterParameters />",
+                  "  <IsSortDescending>false</IsSortDescending>",
+                  "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Eksisterende/nye bygg].* FROM [dbo].[Eksisterende/nye bygg] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Eksisterende/nye bygg"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          },
+          {
+            "name": "TableWidgetSerialization",
+            "value": [
+              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
+              "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
+              "  <ColumnSuggestedType />",
+              "  <ColumnFormat />",
+              "  <ColumnAccuracy />",
+              "  <ColumnCurrencySymbol />",
+              "  <ColumnPositivePattern />",
+              "  <ColumnNegativePattern />",
+              "  <ColumnWidths>",
+              "    <item>",
+              "      <key>",
+              "        <string>Eksisterende/nye byggkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>163</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Eksisterende/nye byggnavn</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>164</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Eksisterende/nye byggkodeNavn</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>188</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Tabellkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>81</int>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnWidths>",
+              "  <ColumnDisplayIndex>",
+              "    <item>",
+              "      <key>",
+              "        <string>Eksisterende/nye byggkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>0</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Eksisterende/nye byggnavn</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>1</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Eksisterende/nye byggkodeNavn</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>2</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Tabellkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>3</int>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnDisplayIndex>",
+              "  <ColumnFrozen />",
+              "  <ColumnChecked>",
+              "    <item>",
+              "      <key>",
+              "        <string>Eksisterende/nye byggkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Eksisterende/nye byggnavn</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Eksisterende/nye byggkodeNavn</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Tabellkode</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnChecked>",
+              "  <ColumnFilter />",
+              "  <SelectionFilter />",
+              "  <FilterParameters />",
+              "  <IsSortDescending>false</IsSortDescending>",
+              "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Handsamingstid av meldinga",
+        "columns": [
+          {
+            "name": "Handsamingstid av meldingakode",
+            "dataType": "string",
+            "sourceColumn": "Handsamingstid av meldingakode",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Handsamingstid av meldinganavn",
+            "dataType": "string",
+            "sourceColumn": "Handsamingstid av meldinganavn",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Handsamingstid av meldingakodeNavn",
+            "dataType": "string",
+            "sourceColumn": "Handsamingstid av meldingakodeNavn",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Tabellkode",
+            "dataType": "string",
+            "sourceColumn": "Tabellkode",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Handsamingstid av meldinga",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[Handsamingstid av meldinga].* FROM [dbo].[Handsamingstid av meldinga] ",
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
             }
           }
         ],
         "annotations": [
           {
             "name": "_TM_ExtProp_QueryDefinition",
-            "value": " SELECT [dbo].[Eksisterende/nye].* FROM [dbo].[Eksisterende/nye] "
+            "value": " SELECT [dbo].[Handsamingstid av meldinga].* FROM [dbo].[Handsamingstid av meldinga] "
           },
           {
             "name": "_TM_ExtProp_DbTableName",
-            "value": "Eksisterende/nye"
+            "value": "Handsamingstid av meldinga"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Konklusjon på meldinga",
+        "columns": [
+          {
+            "name": "Konklusjon på meldingakode",
+            "dataType": "string",
+            "sourceColumn": "Konklusjon på meldingakode",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Konklusjon på meldinganavn",
+            "dataType": "string",
+            "sourceColumn": "Konklusjon på meldinganavn",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Konklusjon på meldingakodeNavn",
+            "dataType": "string",
+            "sourceColumn": "Konklusjon på meldingakodeNavn",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Tabellkode",
+            "dataType": "string",
+            "sourceColumn": "Tabellkode",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Konklusjon på meldinga",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[Konklusjon på meldinga].* FROM [dbo].[Konklusjon på meldinga] ",
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Konklusjon på meldinga].* FROM [dbo].[Konklusjon på meldinga] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Konklusjon på meldinga"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Konklusjon på undersøking avslutta",
+        "columns": [
+          {
+            "name": "Konklusjon på undersøking avsluttakode",
+            "dataType": "string",
+            "sourceColumn": "Konklusjon på undersøking avsluttakode",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Konklusjon på undersøking avsluttanavn",
+            "dataType": "string",
+            "sourceColumn": "Konklusjon på undersøking avsluttanavn",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Konklusjon på undersøking avsluttakodeNavn",
+            "dataType": "string",
+            "sourceColumn": "Konklusjon på undersøking avsluttakodeNavn",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Tabellkode",
+            "dataType": "string",
+            "sourceColumn": "Tabellkode",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Konklusjon på undersøking avslutta",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[Konklusjon på undersøking avslutta].* FROM [dbo].[Konklusjon på undersøking avslutta] ",
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Konklusjon på undersøking avslutta].* FROM [dbo].[Konklusjon på undersøking avslutta] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Konklusjon på undersøking avslutta"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Personellets utdanning",
+        "columns": [
+          {
+            "name": "Personellets utdanningkode",
+            "dataType": "string",
+            "sourceColumn": "Personellets utdanningkode",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Personellets utdanningnavn",
+            "dataType": "string",
+            "sourceColumn": "Personellets utdanningnavn",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Personellets utdanningkodeNavn",
+            "dataType": "string",
+            "sourceColumn": "Personellets utdanningkodeNavn",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Tabellkode",
+            "dataType": "string",
+            "sourceColumn": "Tabellkode",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Personellets utdanning",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[Personellets utdanning].* FROM [dbo].[Personellets utdanning] ",
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[Personellets utdanning].* FROM [dbo].[Personellets utdanning] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Personellets utdanning"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "År",
+        "columns": [
+          {
+            "name": "År",
+            "dataType": "string",
+            "sourceColumn": "År"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "År",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[År].* FROM [dbo].[År] ",
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
+            },
+            "annotations": [
+              {
+                "name": "TableWidgetSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
+                  "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
+                  "  <ColumnSuggestedType />",
+                  "  <ColumnFormat />",
+                  "  <ColumnAccuracy />",
+                  "  <ColumnCurrencySymbol />",
+                  "  <ColumnPositivePattern />",
+                  "  <ColumnNegativePattern />",
+                  "  <ColumnWidths>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>År</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>41</int>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnWidths>",
+                  "  <ColumnDisplayIndex>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>År</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>0</int>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnDisplayIndex>",
+                  "  <ColumnFrozen />",
+                  "  <ColumnChecked>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>År</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnChecked>",
+                  "  <ColumnFilter />",
+                  "  <SelectionFilter />",
+                  "  <FilterParameters />",
+                  "  <IsSortDescending>false</IsSortDescending>",
+                  "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[År].* FROM [dbo].[År] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "År"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          },
+          {
+            "name": "TableWidgetSerialization",
+            "value": [
+              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
+              "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
+              "  <ColumnSuggestedType />",
+              "  <ColumnFormat />",
+              "  <ColumnAccuracy />",
+              "  <ColumnCurrencySymbol />",
+              "  <ColumnPositivePattern />",
+              "  <ColumnNegativePattern />",
+              "  <ColumnWidths>",
+              "    <item>",
+              "      <key>",
+              "        <string>År</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>41</int>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnWidths>",
+              "  <ColumnDisplayIndex>",
+              "    <item>",
+              "      <key>",
+              "        <string>År</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>0</int>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnDisplayIndex>",
+              "  <ColumnFrozen />",
+              "  <ColumnChecked>",
+              "    <item>",
+              "      <key>",
+              "        <string>År</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnChecked>",
+              "  <ColumnFilter />",
+              "  <SelectionFilter />",
+              "  <FilterParameters />",
+              "  <IsSortDescending>false</IsSortDescending>",
+              "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "omsorgs-hjelpetiltak",
+        "columns": [
+          {
+            "name": " omsorgs-/hjelpetiltakkode",
+            "dataType": "string",
+            "sourceColumn": " omsorgs-/hjelpetiltakkode",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": " omsorgs-/hjelpetiltaknavn",
+            "dataType": "string",
+            "sourceColumn": " omsorgs-/hjelpetiltaknavn",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": " omsorgs-/hjelpetiltakkodeNavn",
+            "dataType": "string",
+            "sourceColumn": " omsorgs-/hjelpetiltakkodeNavn",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Tabellkode",
+            "dataType": "string",
+            "sourceColumn": "Tabellkode",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "omsorgs-hjelpetiltak",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[ omsorgs-/hjelpetiltak].* FROM [dbo].[ omsorgs-/hjelpetiltak] ",
+              "dataSource": "VK-SXD0E-003;TEST_Reporting_ASSS"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[ omsorgs-/hjelpetiltak].* FROM [dbo].[ omsorgs-/hjelpetiltak] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": " omsorgs-/hjelpetiltak"
           },
           {
             "name": "_TM_ExtProp_DbSchemaName",
@@ -14977,20 +14704,6 @@
         "fromColumn": "Tabell",
         "toTable": "Tabeller",
         "toColumn": "Tabellnummer"
-      },
-      {
-        "name": "e93c2126-b5fc-4246-b517-1d3e8d5fd7cc",
-        "fromTable": "Alle Data",
-        "fromColumn": "Variabel",
-        "toTable": "Variabel",
-        "toColumn": "Variabel"
-      },
-      {
-        "name": "7d2da773-d756-403e-b569-1ad00b2f5e9f",
-        "fromTable": "Alle Data",
-        "fromColumn": "År",
-        "toTable": "År",
-        "toColumn": "År"
       },
       {
         "name": "664363a3-aadb-4475-b62b-318ab1c5d07f",
@@ -15084,32 +14797,11 @@
         "toColumn": "Kompetansekode"
       },
       {
-        "name": "15809d13-d78d-47bc-9b64-2bb7f59dd8b1",
-        "fromTable": "Alle Data",
-        "fromColumn": "Konklusjonkode",
-        "toTable": "Konklusjon",
-        "toColumn": "Konklusjonkode"
-      },
-      {
-        "name": "41bb7889-9404-4b29-9d2f-eccf46e726be",
-        "fromTable": "Alle Data",
-        "fromColumn": "Omsorgs-/hjelpetiltakkode",
-        "toTable": "Omsorgs-hjelpetiltak",
-        "toColumn": "Omsorgs-/hjelpetiltakkode"
-      },
-      {
         "name": "5ca7e4c3-bc7d-4919-a513-bc285948e1bc",
         "fromTable": "Alle Data",
         "fromColumn": "Oppholdstidkode",
         "toTable": "Oppholdstid",
         "toColumn": "Oppholdstidkode"
-      },
-      {
-        "name": "a0775ada-0a76-4aee-a6bc-6e37483ae80a",
-        "fromTable": "Alle Data",
-        "fromColumn": "Postkode",
-        "toTable": "Post",
-        "toColumn": "Postkode"
       },
       {
         "name": "ddd6c612-d7e7-4dfd-8e9f-adeeb8c1d433",
@@ -15189,11 +14881,46 @@
         "toColumn": "Søknadstypekode"
       },
       {
-        "name": "f9f4760a-75bb-4b39-a518-3cbede4b221a",
+        "name": "d484c787-89f9-4992-bfb0-4e104e13197f",
         "fromTable": "Alle Data",
-        "fromColumn": "Eksisterende/nyekode",
-        "toTable": "Eksisterendenye",
-        "toColumn": "Eksisterende/nyekode"
+        "fromColumn": "Handsamingstid av meldingakode",
+        "toTable": "Handsamingstid av meldinga",
+        "toColumn": "Handsamingstid av meldingakode"
+      },
+      {
+        "name": "ad344230-bf93-4d5e-b171-882ff4dda488",
+        "fromTable": "Alle Data",
+        "fromColumn": "Konklusjon på meldingakode",
+        "toTable": "Konklusjon på meldinga",
+        "toColumn": "Konklusjon på meldingakode"
+      },
+      {
+        "name": "c8e73710-2c4b-401c-ad97-9a794dc1a241",
+        "fromTable": "Alle Data",
+        "fromColumn": "Personellets utdanningkode",
+        "toTable": "Personellets utdanning",
+        "toColumn": "Personellets utdanningkode"
+      },
+      {
+        "name": "d79882a2-879e-4f9d-acd4-87b4a6f6fd8e",
+        "fromTable": "Alle Data",
+        "fromColumn": "År",
+        "toTable": "År",
+        "toColumn": "År"
+      },
+      {
+        "name": "c3261564-93cf-4487-820e-77c732119a2f",
+        "fromTable": "Alle Data",
+        "fromColumn": "Konklusjon på undersøking avsluttakode",
+        "toTable": "Konklusjon på undersøking avslutta",
+        "toColumn": "Konklusjon på undersøking avsluttakode"
+      },
+      {
+        "name": "8637bd17-a8ee-4552-aaa6-c1965867f85e",
+        "fromTable": "Alle Data",
+        "fromColumn": " omsorgs-/hjelpetiltakkode",
+        "toTable": "omsorgs-hjelpetiltak",
+        "toColumn": " omsorgs-/hjelpetiltakkode"
       }
     ],
     "roles": [
